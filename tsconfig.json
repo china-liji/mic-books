@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "module": "commonjs",
+    "jsx": "react",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "target": "es5",
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"]
+    },
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
