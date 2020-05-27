@@ -42,6 +42,7 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "@typescript-eslint/arrow-return-shorthand": "off",
+    "@typescript-eslint/explicit-function-return-type": "error",
     "@typescript-eslint/interface-name": "off",
     "@typescript-eslint/label-position": "off",
     "@typescript-eslint/max-line-length": "off",
