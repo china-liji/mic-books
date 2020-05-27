@@ -8,7 +8,7 @@ import { getDefaultConfig, getConfigByPath } from './locale';
 import { useParams, useHistory } from 'react-router-dom';
 import { RouteParams } from './types';
 
-export const Home = (): React.ReactElement | null => {
+export function Home(): React.ReactElement | null {
   const { home } = useStyles();
   const history = useHistory();
   const key = useParams<RouteParams>()[0] || '';

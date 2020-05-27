@@ -7,50 +7,50 @@ export const useStyles = createUseStyles({
   '@global': {
     '*': {
       margin: 0,
-      padding: 0
+      padding: 0,
     },
     html: {
       fontSize: FontSize.Root,
-      color: Black.L2
+      color: Black.L2,
     },
     body: {
       fontSize: FontSize.Default,
-      fontFamily: 'arial'
+      fontFamily: 'arial',
     },
     'html, body, article, article > div': {
-      height: '100%'
+      height: '100%',
     },
     h1: {
-      fontSize: FontSize.H1
+      fontSize: FontSize.H1,
     },
     h2: {
-      fontSize: FontSize.H2
+      fontSize: FontSize.H2,
     },
     h3: {
-      fontSize: FontSize.H3
+      fontSize: FontSize.H3,
     },
     h4: {
-      fontSize: FontSize.H4
+      fontSize: FontSize.H4,
     },
     h5: {
-      fontSize: FontSize.H5
+      fontSize: FontSize.H5,
     },
     h6: {
-      fontSize: FontSize.H6
+      fontSize: FontSize.H6,
     },
     '.ant-layout, .ant-layout-sider, .ant-layout-header': {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
     },
     '.ant-layout-header': {
-      height: 'auto'
+      height: 'auto',
     },
     [`@media screen and (max-width: ${Screen.MinWidth}px)`]: {
       html: {
-        fontSize: FontSize.MinRem
+        fontSize: FontSize.MinRem,
       },
       body: {
-        fontSize: FontSize.Min
-      }
-    }
-  }
+        fontSize: FontSize.Min,
+      },
+    },
+  },
 });

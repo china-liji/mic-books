@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useDemoStyles } from '@/demos/use-demo-styles';
 import { Props } from './types';
 
-export function DepsTest({ times }: Props): React.ReactElement {
+export function DepsDemo({ times }: Props): React.ReactElement {
   const { demo } = useDemoStyles();
   const [changeableDeps, setChangeableDeps] = useState(true);
 

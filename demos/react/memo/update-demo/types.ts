@@ -1,4 +1,4 @@
-export type ChildProps = {
+export type ChildDemoProps = {
   date: Date;
   getContent(): number;
 };

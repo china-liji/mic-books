@@ -9,13 +9,13 @@ export const useStyles = createUseStyles({
     height: '100%',
     '& button': {
       padding: Spacing.XS2,
-      margin: [Spacing.Z, Spacing.XS4, Spacing.XS4, Spacing.Z]
-    }
+      margin: [Spacing.Z, Spacing.XS4, Spacing.XS4, Spacing.Z],
+    },
   },
   title: {
     textAlign: 'center',
     lineHeight: Spacing.L1,
-    fontSize: FontSize.H2
+    fontSize: FontSize.H2,
   },
   previewer: {
     fontSize: FontSize.H4,
@@ -25,34 +25,34 @@ export const useStyles = createUseStyles({
     borderRight: `${Spacing.BW} solid ${Gray.L2}`,
     '& > header': {
       fontSize: FontSize.H1,
-      color: Blue.L1
+      color: Blue.L1,
     },
     '& > main': {
       padding: [Spacing.Z, Spacing.S2],
       overflow: 'auto',
       '&::after': {
-        content: `''`,
+        content: '""',
         display: 'block',
-        marginTop: Spacing.XL2
-      }
+        marginTop: Spacing.XL2,
+      },
     },
     '& blockquote': {
-      marginLeft: Spacing.E4
+      marginLeft: Spacing.E4,
     },
     '& h1, h2, h3, h4, h5, h6': {
       margin: [Spacing.M1, Spacing.Z, Spacing.XS3, Spacing.Z],
       '&:first-child': {
-        marginTop: Spacing.Z
+        marginTop: Spacing.Z,
       },
       '& + h1, + h2, + h3, + h4, + h5, + h6': {
-        marginTop: Spacing.Z
-      }
+        marginTop: Spacing.Z,
+      },
     },
     '& del': {
-      opacity: 0.45
+      opacity: 0.45,
     },
     '& ul, ol': {
-      paddingLeft: Spacing.M1
+      paddingLeft: Spacing.M1,
     },
     '& ul, ol, dl': {
       marginBottom: Spacing.XS4,
@@ -63,7 +63,7 @@ export const useStyles = createUseStyles({
       backgroundColor: hexToRgba(Blue.L1, 0.15),
       padding: [Spacing.XS1, Spacing.XS2],
       borderRadius: 2,
-      whiteSpace: 'nowrap'
+      whiteSpace: 'nowrap',
     },
     '& pre': {
       fontSize: FontSize.Default,
@@ -73,24 +73,24 @@ export const useStyles = createUseStyles({
         backgroundColor: 'transparent',
         padding: Spacing.Z,
         borderRight: Spacing.Z,
-        whiteSpace: 'pre'
-      }
-    }
+        whiteSpace: 'pre',
+      },
+    },
   },
   menu: {
     color: Black.L3,
     '& .ant-menu': {
-      border: 'none'
+      border: 'none',
     },
     '& header': {
       margin: [0, Spacing.M2],
-      borderBottom: `${Spacing.BW} solid ${Gray.L2}`
+      borderBottom: `${Spacing.BW} solid ${Gray.L2}`,
     },
     '& .ant-layout': {
-      height: '100%'
+      height: '100%',
     },
     '& main': {
-      overflow: 'auto'
+      overflow: 'auto',
     },
-  }
+  },
 });

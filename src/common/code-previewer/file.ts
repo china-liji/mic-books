@@ -8,7 +8,7 @@ export class File {
   }
 
   get type(): string {
-    const result = this.name.match(/\.([^\/\\\.]+?)(?=(?:[?#].*)?$)/);
+    const result = /\.([^/\\.]+?)(?=(?:[?#].*)?$)/.exec(this.name);
     
     return result ? result[1] : '';
   }

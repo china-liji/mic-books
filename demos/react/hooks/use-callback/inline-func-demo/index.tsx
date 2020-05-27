@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useDemoStyles } from '@/demos/use-demo-styles';
 import { Props } from './types';
 
-export function InlineFuncTest({ times }: Props): React.ReactElement {
+export function InlineFuncDemo({ times }: Props): React.ReactElement {
   let getTimes: () => number;
   const { demo } = useDemoStyles();
 

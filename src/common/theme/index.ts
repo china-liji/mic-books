@@ -32,5 +32,5 @@ export function hexToRgba(color: string, opacity: number): string {
     return `rgba(${parseInt(red, 16)},${parseInt(green, 16)},${parseInt(blue, 16)},${opacity})`;
   }
 
-  return this.hexToRgba(Black.L2, opacity);
+  return hexToRgba(Black.L2, opacity);
 }

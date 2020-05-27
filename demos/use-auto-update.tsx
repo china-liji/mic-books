@@ -18,8 +18,8 @@ export function UseAutoUpdate(): [number, React.ReactElement] {
 
   return [
     times,
-    <q>
+    <q key=''>
       组件每隔 <span>1秒</span> 自动刷新，次数标识: <span>{times}</span>
-    </q>
+    </q>,
   ];
 }

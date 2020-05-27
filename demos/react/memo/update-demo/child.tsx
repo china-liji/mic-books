@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { ChildProps } from './types';
+import { ChildDemoProps } from './types';
 
-export function UpdateChildTest({ getContent, date }: ChildProps): React.ReactElement {
+export function ChildDemo({ getContent, date }: ChildDemoProps): React.ReactElement {
   const updateTimes = useRef(0);
   
   updateTimes.current++;
@@ -17,4 +17,4 @@ export function UpdateChildTest({ getContent, date }: ChildProps): React.ReactEl
   );
 }
 
-export const UpdateChildTestWithMemo = React.memo(UpdateChildTest);
+export const ChildDemoWithMemo = React.memo(ChildDemo);

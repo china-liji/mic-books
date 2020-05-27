@@ -5,33 +5,36 @@ export class Config {
   importer: Importer;
   name: string;
   parent = null as Config | null;
+  title: string;
 
-  constructor(name: string, configs: Config[])
-  constructor(name: string, importer: Importer)
-  constructor(name: string, value: Config[] | Importer) {
+  constructor(name: string, configs: Config[], title?: string)
+  constructor(name: string, importer: Importer, title?: string)
+  constructor(name: string, value: Config[] | Importer, title = name) {
     this.name = name;
+    this.title = title;
     
     if (typeof value === 'function') {
       this.configs = [];
-      this.importer = value as Importer;
+      this.importer = value;
       return;
     }
 
-    this.configs = value as Config[];
+    this.configs = value;
     this.importer = null;
 
-    for (const v of value as Config[]) {
+    for (const v of value) {
       v.parent = this;
     }
   }
 
   get key(): string {
-    let { parent } = this;
+    const { parent } = this;
 
-    return (
-      parent ? `${parent.key}/${this.name}` : this.name
-    )
-    .toLowerCase();
+    return encodeURI(
+      (
+        parent ? `${parent.key}/${this.name}` : this.name
+      ).toLowerCase()
+    );
   }
 
   get isLeaf(): boolean {

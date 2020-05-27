@@ -11,28 +11,28 @@ export const useDemoStyles = createUseStyles({
       border: 'none',
     },
     '& span': {
-      color: State.Error
+      color: State.Error,
     },
     '& button': {
-      margin: [Spacing.XS4, Spacing.Z]
+      margin: [Spacing.XS4, Spacing.Z],
     },
     '& blockquote': {
-      margin: Spacing.Z
+      margin: Spacing.Z,
     },
     '& sub, & sup': {
       opacity: 0.6,
       '&::before': {
-        content: `'-'`,
-        margin: [Spacing.Z, Spacing.E1]
-      }
+        content: '"-"',
+        margin: [Spacing.Z, Spacing.E1],
+      },
     },
     '& p:last-child': {
-      marginBottom: Spacing.Z
+      marginBottom: Spacing.Z,
     },
     '& q': {
       '&::before, &::after': {
-        content: `''`
-      }
-    }
-  }
+        content: '""',
+      },
+    },
+  },
 });

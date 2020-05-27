@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStyles } from './use-styles';
-import { CodePreviewerProps } from './types';
+import { CodePreviewerProps, SyntaxHighlighterStyle } from './types';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { Tabs } from 'antd';
 import { File } from './file';
@@ -27,15 +27,15 @@ export function CodePreviewer({ className = '', demo, language, children, ...pro
               {
                 demo.files.map(({ name, source, type }: File, index: number): React.ReactElement => {
                   return (
-                    <TabPane tab={name} key={index + ''}>
-                      <SyntaxHighlighter language={type} style={atomOneLight}>{source}</SyntaxHighlighter>
+                    <TabPane tab={name} key={`${index}`}>
+                      <SyntaxHighlighter language={type} style={atomOneLight as SyntaxHighlighterStyle}>{source}</SyntaxHighlighter>
                     </TabPane>
                   );
                 })
               }
             </Tabs>
           ) :
-          <SyntaxHighlighter language={language} style={atomOneLight}>{children}</SyntaxHighlighter>
+          <SyntaxHighlighter language={language} style={atomOneLight as SyntaxHighlighterStyle}>{children}</SyntaxHighlighter>
       }
     </div>
     
