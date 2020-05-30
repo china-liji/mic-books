@@ -3,7 +3,7 @@ import { Previwer } from './previewer';
 import { useStyles } from './use-styles';
 import { Menu } from './menu';
 import { Layout } from 'antd';
-import { Config } from './config';
+import { Config } from '../configs/config';
 import { getDefaultConfig, getConfigByPath } from './locale';
 import { useParams, useHistory } from 'react-router-dom';
 import { RouteParams } from './types';

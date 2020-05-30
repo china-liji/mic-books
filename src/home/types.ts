@@ -1,5 +1,4 @@
-import { Config } from './config';
-import { Demo } from '../common/code-previewer/demo';
+import { Config } from '../configs/config';
 import ReactMarkdown from 'react-markdown';
 
 export type PreviewerProps = {
@@ -14,13 +13,5 @@ export type DirProps = {
   config: Config;
   onChange(config: Config): void;
 };
-
-export type Export = {
-  [name: string]: Demo;
-} & {
-  default: string;
-};
-
-export type Importer = () => Promise<Export>;
 
 export type MarkdownRenderers = typeof ReactMarkdown['defaultProps']['renderers'];

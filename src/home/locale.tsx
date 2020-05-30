@@ -1,39 +1,8 @@
 import React from 'react';
-import { Config } from './config';
 import { Menu } from 'antd';
 import { MenuItemProps } from 'antd/lib/menu/MenuItem';
-import { Export } from './types';
-
-export const configs = [
-  new Config(
-    'Preface',
-    async (): Promise<Export> => {
-      return await import('@/demos/preface') as unknown as Export;
-    },
-    '前言',
-  ),
-  new Config(
-    'React',
-    [
-      new Config('Hooks', [
-        new Config(
-          'useState',
-          async (): Promise<Export> => {
-            return await import('@/demos/react/hooks/use-state') as unknown as Export;
-          },
-        ),
-        new Config(
-          'useCallback',
-          async (): Promise<Export> => {
-            return await import('@/demos/react/hooks/use-callback') as unknown as Export;
-          },
-        ),
-      ]),
-      // new Config('“useCallback”与“普通函数”的区别'),
-      // new Config('函数组件&渲染函数的区别')
-    ]
-  ),
-];
+import { configs } from '../configs';
+import { Config } from '../configs/config';
 
 export const getDefaultConfig = (cfgs = configs): Config | null => {
   for (const config of cfgs) {
