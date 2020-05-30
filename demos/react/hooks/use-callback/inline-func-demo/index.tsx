@@ -1,10 +1,9 @@
 import React, { useCallback } from 'react';
-import { useDemoStyles } from '@/demos/use-demo-styles';
-import { Props } from './types';
+import useUpdateTimes from '@/demos/hooks/use-update-times';
 
-export function InlineFuncDemo({ times }: Props): React.ReactElement {
+export function InlineFuncDemo(): React.ReactElement {
   let getTimes: () => number;
-  const { demo } = useDemoStyles();
+  const times = useUpdateTimes();
 
   const getTimesWithUseCallback = useCallback(
     // 这里每次都会生成一个新的函数，所以每次不同的 times 都会被闭包于函数内
@@ -16,7 +15,7 @@ export function InlineFuncDemo({ times }: Props): React.ReactElement {
   );
 
   return (
-    <div className={demo}>
+    <div>
       <p>
         <b>内联函数</b> 每秒执行结果: <span>{getTimes()}</span>
         <sub>每次结果都不同，说明内联函数随组件刷新而重新生成</sub>

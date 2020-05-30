@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Menu as AntdMenu, Layout } from 'antd';
 import { renderMenuItem, getConfigByPath, fillOpenKeys } from './locale';
 import { useStyles } from './use-styles';
@@ -16,7 +16,7 @@ export function Menu({ onChange, config }: DirProps): React.ReactElement {
     return [config.key];
   }, [config]);
 
-  const onSelect = useCallback(({ key }: ClickParam): void => {
+  const onSelect = ({ key }: ClickParam): void => {
     if (key === config.key) {
       return;
     }
@@ -24,7 +24,7 @@ export function Menu({ onChange, config }: DirProps): React.ReactElement {
     onChange(
       getConfigByPath(key)
     );
-  }, [config, onChange]);
+  };
 
   useEffect((): void => {
     setOpenKeys(

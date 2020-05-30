@@ -1,14 +1,13 @@
 import React, { useState, useCallback } from 'react';
-import { Layout } from 'antd';
-import { ChildDemo, ChildDemoWithMemo } from './child';
-import { ChildDemoProps, Props } from './types';
-import { useDemoStyles } from '@/demos/use-demo-styles';
+import { ChildDemoWithMemo } from './child';
+import { ChildDemoProps } from './types';
+import useUpdateTimes from '@/demos/hooks/use-update-times';
+import { Button } from 'antd';
 
-export function UpdateDemo({ times }: Props): React.ReactElement {
+export function UpdateDemo(): React.ReactElement {
   let getContentInlineFunc: ChildDemoProps['getContent'];
   const [date, setDate] = useState(new Date());
-  const { demo } = useDemoStyles();
-  const { Sider, Content } = Layout;
+  const times = useUpdateTimes();
 
   const onButtonClick = (): void => {
     setDate(
@@ -24,29 +23,38 @@ export function UpdateDemo({ times }: Props): React.ReactElement {
   );
 
   return (
-    <div className={demo}>
+    <div>
       <p>
-        <button onClick={onButtonClick}>点击刷新 <span>date</span></button>
+        <Button onClick={onButtonClick}>点击刷新 <span>date</span></Button>
       </p>
       <hr />
-      <Layout>
-        <Sider width='30%'>
-          <p>
+      <ChildDemoWithMemo
+        title={
+          <>
             <span>React.memo</span> + useCallback(..., [date])
-          </p>
-          <ChildDemoWithMemo date={date} getContent={getContent} />
-        </Sider>
-        <Content>
-          <p>React.memo + <span>内联函数</span></p>
-          <ChildDemoWithMemo date={date} getContent={getContentInlineFunc} />
-        </Content>
-        <Sider width='30%'>
-          <p>
+          </>
+        }
+        date={date}
+        getContent={getContent}
+      />
+      <hr />
+      <ChildDemoWithMemo
+        title={
+          <>React.memo + <span>内联函数</span></>
+        }
+        date={date}
+        getContent={getContentInlineFunc}
+      />
+      <hr />
+      <ChildDemoWithMemo
+        title={
+          <>
             useCallback(..., [date]) <del>+ React.memo</del> 
-          </p>
-          <ChildDemo date={date} getContent={getContent} />
-        </Sider>
-      </Layout>
+          </>
+        }
+        date={date}
+        getContent={getContent}
+      />
     </div>
   );
 }

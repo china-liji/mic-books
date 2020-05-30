@@ -20,11 +20,9 @@ export function AutoUpdate({ demo }: AutoUpdateProps): React.ReactElement {
 
   return (
     <div className={autoUpdate}>
-      <p>
-        组件每隔 1秒 自动刷新，次数标识 times: {times}
-      </p>
+      <p>组件每隔 1秒 自动刷新</p>
       <blockquote>
-        <demo.component times={times} />
+        <demo.component />
       </blockquote>
     </div>
   );

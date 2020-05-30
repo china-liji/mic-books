@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import { useDemoStyles } from '@/demos/use-demo-styles';
-import { Props } from './types';
+import useUpdateTimes from '@/demos/hooks/use-update-times';
+import { Button } from 'antd';
 
-export function DepsDemo({ times }: Props): React.ReactElement {
-  const { demo } = useDemoStyles();
+export function DepsDemo(): React.ReactElement {
   const [changeableDeps, setChangeableDeps] = useState(true);
+  const times = useUpdateTimes();
 
   const getTimes = useCallback(
     (): number => {
@@ -19,7 +19,7 @@ export function DepsDemo({ times }: Props): React.ReactElement {
   };
 
   return (
-    <div className={demo}>
+    <div>
       <p>
         useCallback(..., <span>[{changeableDeps ? 'times' : 'null'}]</span>);
       </p>
@@ -33,9 +33,9 @@ export function DepsDemo({ times }: Props): React.ReactElement {
         }</sub>
       </p>
       <p>
-        <button onClick={onButtonClick}>
+        <Button onClick={onButtonClick}>
           {changeableDeps ? '移除' : '设置'}动态 deps
-        </button>
+        </Button>
       </p>
     </div>
   );

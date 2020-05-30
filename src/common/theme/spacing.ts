@@ -59,5 +59,5 @@ export enum Spacing {
   XXXL1 = '30rem',
   XXXL2 = '36rem',
   XXXL3 = '42rem',
-  XXXL4 = '46rem'
+  XXXL4 = '46rem',
 }

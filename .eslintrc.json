@@ -48,6 +48,12 @@
     "@typescript-eslint/max-line-length": "off",
     "@typescript-eslint/no-bitwise": "off",
     "@typescript-eslint/no-console": "off",
-    "@typescript-eslint/no-shadowed-variable": "off"
+    "@typescript-eslint/no-shadowed-variable": "off",
+    "@typescript-eslint/restrict-template-expressions": [
+      "error",
+      {
+        "allowBoolean": true
+      }
+    ]
   }
 }

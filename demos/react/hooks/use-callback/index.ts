@@ -1,7 +1,5 @@
 import depsDemoSource from './deps-demo?txt';
-import depsDemoTypesSource from './deps-demo/types?txt';
 import inlineFuncDemoSource from './inline-func-demo?txt';
-import inlineFuncDemoTypesSource from './inline-func-demo/types?txt';
 import outerFuncDemoSource from './outer-func-demo?txt';
 import outerFuncDemoLocaleSource from './outer-func-demo/locale?txt';
 import depBySubDemoSource from './dep-by-sub-demo?txt';
@@ -12,13 +10,14 @@ import { DepsDemo } from './deps-demo';
 import { Demo } from '@/src/common/code-previewer/demo';
 import { File } from '@/src/common/code-previewer/file';
 import { InlineFuncDemo } from './inline-func-demo';
+import { fileOfUseUpdateTimes } from '@/demos/hooks';
 
 export { updateDemo as memoUpdateDemo } from '../../memo';
 
 export const depsDemo = new Demo(
   [
     new File('index.tsx', depsDemoSource),
-    new File('types.ts', depsDemoTypesSource),
+    fileOfUseUpdateTimes,
   ],
   DepsDemo,
   true
@@ -27,7 +26,7 @@ export const depsDemo = new Demo(
 export const inlineFuncDemo = new Demo(
   [
     new File('index.tsx', inlineFuncDemoSource),
-    new File('types.ts', inlineFuncDemoTypesSource),
+    fileOfUseUpdateTimes,
   ],
   InlineFuncDemo,
   true
@@ -42,6 +41,7 @@ export const depBySubDemo = new Demo([
   new File('index.tsx', depBySubDemoSource),
   new File('sub.tsx', depBySubDemoSubSource),
   new File('types.ts', depBySubDemoTypesSource),
+  fileOfUseUpdateTimes,
 ]);
 
 export default markdown;

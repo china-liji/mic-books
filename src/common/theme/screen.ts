@@ -1,3 +1,3 @@
 export enum Screen {
-  MinWidth = 1440
+  MinWidth = 1440,
 }

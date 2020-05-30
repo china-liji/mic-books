@@ -8,5 +8,5 @@ export enum FontSize {
   H3 = '1.6rem',
   H4 = '1.4rem',
   H5 = '1.3rem',
-  H6 = '1.2rem'
+  H6 = '1.2rem',
 }

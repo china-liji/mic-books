@@ -30,4 +30,14 @@ const [str, setStr] = useState('123');
 import(callSetStateDemo);
 ```
 
-特殊说明：`更新函数` 自身并不受更新机制影响，所以不必将其纳入其他 `hooks` 的 `deps` 范围中。
+### 更新函数的唯一性
+`更新函数` 具有唯一性，其自身不受更新机制而变化，所以不必将其纳入其他 `hooks` 的 `deps` 范围中。
+```demo
+import(compareSetterDemo);
+```
+
+### 无效的调用
+`值类型` 或 `引用类型` 的状态值，只要设置的 `新值` 与 `旧值` 一致，那么便不会触发更新。
+```demo
+import(ineffectiveCallDemo);
+```
