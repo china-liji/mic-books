@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "alwaysStrict": true,
+    "strictNullChecks": true,
     "module": "commonjs",
     "jsx": "react",
     "sourceMap": true,

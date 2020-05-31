@@ -1,8 +1,8 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { MenuItemProps } from 'antd/lib/menu/MenuItem';
-import { configs } from '../configs';
 import { Config } from '../configs/config';
+import configs from '../configs';
 
 export const getDefaultConfig = (cfgs = configs): Config | null => {
   for (const config of cfgs) {

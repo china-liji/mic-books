@@ -4,14 +4,13 @@
 ### TsDoc 释义
 ```ts
 /**
- * 返回一个状态值和一个更新该状态值的函数。
- * @param initialState 该状态值的初始值。
+ * useState 返回一个状态值和一个更新该状态值的函数。
+ * @param initialState 该状态值的初始值（该参数在代码同一位置，仅首次有效）。
  * @version 16.8.0
  */
 function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
-// convenience overload when first argument is ommitted
 /**
- * 返回一个状态值和一个更新该状态值的函数。
+ * useState 返回一个状态值和一个更新该状态值的函数。（重载 - 无参数形式）
  * @version 16.8.0
  */
 function useState<S = undefined>(): [S | undefined, Dispatch<SetStateAction<S | undefined>>];
@@ -22,6 +21,7 @@ function useState<S = undefined>(): [S | undefined, Dispatch<SetStateAction<S | 
 const [state, setState] = useState(initialState);
 const [num, setNum] = useState(0);
 const [str, setStr] = useState('123');
+const [anchor, setAnchor] = useState<HTMLButtonElement>();
 ```
 
 ### 更新机制

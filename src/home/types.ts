@@ -1,5 +1,4 @@
 import { Config } from '../configs/config';
-import ReactMarkdown from 'react-markdown';
 
 export type PreviewerProps = {
   config: Config;
@@ -14,4 +13,11 @@ export type DirProps = {
   onChange(config: Config): void;
 };
 
-export type MarkdownRenderers = typeof ReactMarkdown['defaultProps']['renderers'];
+export type MarkdownRendererCodeParameter = {
+  value: string;
+  language: string;
+};
+
+export type MarkdownRenderers = {
+  code(MarkdownRendererCodeParameter): React.ReactElement;
+};

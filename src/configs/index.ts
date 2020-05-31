@@ -1,7 +1,7 @@
 import { Config } from './config';
 import { Export } from './types';
 
-export const configs = [
+export default [
   new Config(
     'Preface',
     async (): Promise<Export> => {

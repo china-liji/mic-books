@@ -1,24 +1,25 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useStyles } from './use-styles';
-import { PreviewerProps, Export, MarkdownRenderers } from './types';
+import { PreviewerProps, MarkdownRenderers, MarkdownRendererCodeParameter } from './types';
 import { Layout } from 'antd';
 import { CodePreviewer } from '../common/code-previewer';
 import { Title } from './title';
 import { Demo } from '../common/code-previewer/demo';
+import { Export } from '../configs/types';
 
 export function Previwer({ config }: PreviewerProps): React.ReactElement {
   const { title } = config;
   const { previewer } = useStyles();
   const { Content } = Layout;
-  const [expo, setExport] = useState(null as Export);
+  const [expo, setExport] = useState<Export>();
 
-  const renderers = useMemo((): MarkdownRenderers => {
+  const renderers = useMemo<MarkdownRenderers>((): MarkdownRenderers => {
     return {
-      code({ value = '', language }: Parameters<MarkdownRenderers['code']>[0]): React.ReactElement {
+      code({ value = '', language }: MarkdownRendererCodeParameter): React.ReactElement {
         const result = /^\s*import\s*\(\s*(\w+)\s*\)\s*;*\s*$/.exec(value);
 
-        if (result) {
+        if (result && expo) {
           const demo = expo[result[1]];
 
           if (demo && demo instanceof Demo) {
