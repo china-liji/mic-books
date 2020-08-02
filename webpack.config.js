@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
   this.output = {
     filename: `${distFolder}/js/boundle.js`,
     path: __dirname,
-    publicPath: '/',
+    publicPath: './',
   };
 
   this.resolve = {
