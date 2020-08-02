@@ -4,7 +4,9 @@ const path = require('path');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
-  const distDir = `${__dirname}/dist`;
+  const distFolder = 'docs';
+  const distDir = `${__dirname}/${distFolder}`;
+  
 
   this.devServer = {
     contentBase: `${__dirname}/books`,
@@ -70,7 +72,7 @@ module.exports = (env, argv) => {
   ];
 
   this.output = {
-    filename: 'dist/js/boundle.js',
+    filename: `${distFolder}/js/boundle.js`,
     path: __dirname,
     publicPath: '/',
   };

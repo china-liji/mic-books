@@ -7,9 +7,6 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "target": "es5",
-    "types": [
-      "node"
-    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["*"]

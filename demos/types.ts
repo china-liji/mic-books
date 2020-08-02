@@ -1,5 +1,5 @@
-import { HTMLProps } from 'react';
+import { BlockComponentProps } from 'mic-global';
 
-export interface AutoUpdateProps extends HTMLProps<HTMLDivElement> {
+export interface AutoUpdateProps extends BlockComponentProps {
   children: React.ReactElement | React.ReactElement[];
 }

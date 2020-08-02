@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{191:function(e,n,r){"use strict";r.r(n),r.d(n,"lang",(function(){return o}));var o={menu:{dir:"目录",preface:"前言"},previewer:{demo:"实例效果",reload:"重新加载组件"}}}}]);

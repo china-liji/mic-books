@@ -1,18 +1,12 @@
 import React from 'react';
-import { Home } from '../home';
+import { Home } from '../pages/home';
 import { useStyles } from './use-styles';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useAppStyles } from 'mic-global';
 
 export function App(): React.ReactElement {
   useStyles();
-
-  // React.useCallback
-  // React.useContext
-  // React.useEffect
-  // React.useMemo
-  // React.useReducer
-  // React.useRef
-  // React.useState
+  useAppStyles();
 
   return (
     <BrowserRouter>

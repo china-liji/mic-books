@@ -1,23 +1,16 @@
 ### 描述
 `useCallback` 将会根据参数 `callback` 来返回一个记忆化版本的 `callback`，它只会在依赖项 `deps` 发生变化时，才会更新、改变。
 
-### TsDoc 释义
-```ts
-/**
- * useCallback 将会根据参数 callback 来返回一个记忆化版本的 callback；它只会在依赖项 deps 发生变化时，才会更新、改变。
- * @param callback 需要记忆化的回调函数
- * @param deps 更新依赖
- * @returns 一个记忆化版本的 callback
- * @version 16.8.0
- */
-function useCallback<T extends (...args: any[]) => any>(callback: T, deps: any[]): T;
+### 文档释义
+```demo
+import(interfaceDemo);
 ```
 
 ### 基础调用
-```ts
+```js
 const cb = useCallback(callback, deps);
-const cb1 = useCallback((): any => {}, []);
-const cb2 = useCallback((): any => {}, [dep1, dep2]);
+const cb1 = useCallback(() => {}, []);
+const cb2 = useCallback(() => {}, [dep1, dep2]);
 ```
 
 ### 更新机制
@@ -43,12 +36,12 @@ import(outerFuncDemo);
 ```
 
 ### 有效场景
-1. `useCallback` 函数被子组件 `deps` 所依赖，即子组件需根据该函数的更新，从而进行某些特定操作。
+* `useCallback` 函数被子组件 `deps` 所依赖，即子组件需根据该函数的更新，从而进行某些特定操作。
 ```demo
 import(depBySubDemo);
 ```
 
-2. 配合 `React.memo` 使用，以避免子组件随父组件的频繁刷新；类似 `React.Component` 的 `shouldComponentUpdate` 机制。
+* 配合 `React.memo` 使用，以避免子组件随父组件的频繁刷新；类似 `React.Component` 的 `shouldComponentUpdate` 机制。
 ```demo
 import(memoUpdateDemo);
 ```

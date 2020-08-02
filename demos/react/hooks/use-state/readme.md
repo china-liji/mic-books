@@ -1,23 +1,13 @@
 ### 描述
 `useState` 将会根据参数 `initialState` 来返回一个记忆化版本的状态值和一个更新该状态值的函数。
 
-### TsDoc 释义
-```ts
-/**
- * useState 返回一个状态值和一个更新该状态值的函数。
- * @param initialState 该状态值的初始值（该参数在代码同一位置，仅首次有效）。
- * @version 16.8.0
- */
-function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
-/**
- * useState 返回一个状态值和一个更新该状态值的函数。（重载 - 无参数形式）
- * @version 16.8.0
- */
-function useState<S = undefined>(): [S | undefined, Dispatch<SetStateAction<S | undefined>>];
+### 文档释义
+```demo
+import(interfaceDemo);
 ```
 
 ### 基础调用
-```ts
+```js
 const [state, setState] = useState(initialState);
 const [num, setNum] = useState(0);
 const [str, setStr] = useState('123');

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{190:function(e,r,n){"use strict";n.r(r),n.d(r,"lang",(function(){return o}));var o={menu:{dir:"Directory",preface:"Preface"},previewer:{demo:"demo",reload:"reload this component"}}}}]);
