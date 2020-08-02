@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode=production -p",
     "start": "webpack-dev-server",
-    "lint-all": "eslint --ext .tsx,.ts src/ demos/"
+    "lint-all": "eslint --ext .tsx,.ts src/ demos/",
+    "postlint-all": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -57,7 +58,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run build"
     }
   }
 }
