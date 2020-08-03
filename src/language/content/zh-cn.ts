@@ -18,6 +18,7 @@ export const language = {
   previewer: {
     autoUpdate: '组件将每隔 1s 自动更新',
     demo: '实例效果',
+    error: '抱歉，暂未找到指定文档..',
     reload: '重新加载组件',
   },
 };

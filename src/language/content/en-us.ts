@@ -19,6 +19,7 @@ export const language: Language = {
   previewer: {
     autoUpdate: 'This component will be updated automatically every 1s',
     demo: 'Demo',
+    error: 'Sorry, the document is not found..',
     reload: 'Reload this component',
   },
 };
