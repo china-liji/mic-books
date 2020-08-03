@@ -7,9 +7,9 @@ import { Inspector, InspectorProps } from 'mic-inspector';
 
 export const { RegExp } = window;
 
-export const Markdown = React.lazy((): Promise<typeof import('react-markdown')> => {
-  return import('react-markdown');
-});
+// export const Markdown = React.lazy((): Promise<typeof import('react-markdown')> => {
+//   return import('react-markdown');
+// });
 
 export const getMarkdownRenderers = (expo: Export): MarkdownRenderers => {
   return {

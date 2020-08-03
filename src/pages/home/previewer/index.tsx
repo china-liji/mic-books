@@ -4,9 +4,9 @@ import { PreviewerProps } from './types';
 import { Layout } from 'antd';
 import { Title } from '../title';
 import { Export } from '@/src/config/types';
-import { getMarkdownRenderers, Markdown } from './locale';
-import { Suspense } from '@/src/components/suspense';
+import { getMarkdownRenderers } from './locale';
 import { Loader } from '@/src/components/loader';
+import Markdown from 'react-markdown';
 
 export function Previwer({ config }: PreviewerProps): ReactElement {
   const className = useStyles();
@@ -20,9 +20,7 @@ export function Previwer({ config }: PreviewerProps): ReactElement {
         document.querySelector(`.${useStyles.originalClassName as string}`)!.scrollTop = 0;
 
         return (
-          <Suspense>
-            <Markdown source={expo.default} renderers={getMarkdownRenderers(expo)} />
-          </Suspense>
+          <Markdown source={expo.default} renderers={getMarkdownRenderers(expo)} />
         );
       })
     );

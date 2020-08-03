@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, memo } from 'react';
+import React, { useMemo } from 'react';
 import { Previwer } from './previewer';
 import { useStyles } from './use-styles';
 import { Menu } from './menu';
