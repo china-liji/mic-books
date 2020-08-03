@@ -10,7 +10,7 @@ import { REM } from 'mic-global';
 import { MenuItemProps } from 'antd/lib/menu/MenuItem';
 import { pageContext } from '@/src/components/page/locale';
 
-export function Menu({ onChange, config }: MenuProps): React.ReactElement {
+export function Menu({ config }: MenuProps): React.ReactElement {
   const className = useStyles();
   const { Sider, Content } = Layout;
   const [openKeys, setOpenKeys] = useState([config.key] as string[]);
@@ -19,16 +19,6 @@ export function Menu({ onChange, config }: MenuProps): React.ReactElement {
   const selectedKeys = useMemo((): string[] => {
     return [config.key];
   }, [config]);
-
-  const onSelect = ({ key }: Parameters<Exclude<MenuItemProps['onClick'], undefined>>[0]): void => {
-    if (key === config.key) {
-      return;
-    }
-    
-    onChange(
-      getConfigByPath(key as string) as Config
-    );
-  };
 
   useEffect((): void => {
     setOpenKeys(
@@ -51,7 +41,7 @@ export function Menu({ onChange, config }: MenuProps): React.ReactElement {
             onOpenChange={onOpenChange}
             mode='inline'
           >
-            {renderMenuItem(onSelect)}
+            {renderMenuItem()}
           </AntdMenu>
         </Content>
       </Layout>

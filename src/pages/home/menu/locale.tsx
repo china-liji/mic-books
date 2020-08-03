@@ -3,6 +3,7 @@ import { MenuItemProps } from 'antd/lib/menu/MenuItem';
 import { Menu } from 'antd';
 import { Config } from '@/src/config';
 import { config } from '@/demos/config';
+import { Link } from 'react-router-dom';
 
 export const fillOpenKeys = (openKeys: string[], { key, parent }: Config): string[] => {
   if (openKeys.indexOf(key) === -1) {
@@ -22,7 +23,7 @@ export const fillOpenKeys = (openKeys: string[], { key, parent }: Config): strin
   return openKeys.slice();
 };
 
-export const renderMenuItem = (onSelect: MenuItemProps['onClick'], cfg = config): React.ReactElement[] => {
+export const renderMenuItem = (cfg = config): React.ReactElement[] => {
   const { Item, SubMenu } = Menu;
 
   return (
@@ -31,13 +32,15 @@ export const renderMenuItem = (onSelect: MenuItemProps['onClick'], cfg = config)
       .map(({ isLeaf, key, title, configs }: Config): React.ReactElement => {
         if (isLeaf) {
           return (
-            <Item key={key} data-key={key} onClick={onSelect}>{title}</Item>
+            <Item key={key} data-key={key}>
+              <Link to={`/${key}`}>{title}</Link>
+            </Item>
           );
         }
 
         return (
           <SubMenu key={key} title={title}>
-            {renderMenuItem(onSelect, configs)}
+            {renderMenuItem(configs)}
           </SubMenu>
         );
       })

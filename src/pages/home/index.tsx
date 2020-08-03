@@ -28,13 +28,9 @@ export function Home(): React.ReactElement | null {
     memo(Menu)
   );
 
-  const onDirChange = useCallback(({ key }: Config): void => {
-    history.push(`/${key}`);
-  }, []);
-
   return (
     <Page className={useStyles()}>
-      <menu.current config={config} onChange={onDirChange} />
+      <menu.current config={config} />
       <Previwer config={config} />
       <LanguageSelector />
     </Page>

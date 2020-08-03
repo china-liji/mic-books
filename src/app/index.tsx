@@ -9,7 +9,7 @@ export function App(): React.ReactElement {
   useAppStyles();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='mic-books'>
       <Switch>
         <Route exact path='/**' component={Home} />
       </Switch>

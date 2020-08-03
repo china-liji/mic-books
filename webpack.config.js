@@ -66,7 +66,7 @@ module.exports = (env, argv) => {
         collapseWhitespace: true,
         minifyCSS: true
       },
-      filename: `${isProd ? `${distDir}/` : ''}index.html`,
+      filename: `${distDir}/index.html`,
       template: 'src/index.html'
     }),
   ];
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
   this.output = {
     filename: `js/boundle.js`,
     path: `${__dirname}/${distFolder}`,
-    publicPath: './',
+    publicPath: isProd ? './' : '/',
   };
 
   this.resolve = {
