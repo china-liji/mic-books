@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
   this.devServer = {
     contentBase: `${__dirname}/books`,
     port: 320,
-    historyApiFallback: true,
+    // historyApiFallback: true,
   };
 
   if (!isProd) {
