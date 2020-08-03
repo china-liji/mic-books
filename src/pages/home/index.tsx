@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, memo } from 'react';
+import React, { useMemo, useRef, memo } from 'react';
 import { Previwer } from './previewer';
 import { useStyles } from './use-styles';
 import { Menu } from './menu';
@@ -31,7 +31,7 @@ export function Home(): React.ReactElement | null {
   return (
     <Page className={useStyles()}>
       <menu.current config={config} />
-      <Previwer config={config} />
+      {/* <Previwer config={config} /> */}
       <LanguageSelector />
     </Page>
   );

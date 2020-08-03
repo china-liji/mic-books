@@ -17,7 +17,7 @@ export const useLanguageType = (): [LanguageType, (languageType: LanguageType) =
     useMemo((): LanguageType => {
       if (currentLanguageType) {
         const type = (currentLanguageType as string).toLowerCase();
-    
+
         for (const name in LanguageType) {
           if ((LanguageType[name] as string).toLowerCase() === type) {
             return LanguageType[name] as LanguageType;

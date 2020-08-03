@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   
 
   this.devServer = {
-    contentBase: `${__dirname}/books`,
+    contentBase: __dirname,
     port: 320,
     // historyApiFallback: true,
   };
