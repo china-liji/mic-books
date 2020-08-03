@@ -24,14 +24,10 @@ export function Home(): React.ReactElement | null {
     return config;
   }, [key]);
 
-  const menu = useRef(
-    memo(Menu)
-  );
-
   return (
     <Page className={useStyles()}>
-      <menu.current config={config} />
-      {/* <Previwer config={config} /> */}
+      <Menu config={config} />
+      <Previwer config={config} />
       <LanguageSelector />
     </Page>
   );

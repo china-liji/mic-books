@@ -2,11 +2,10 @@ import React from 'react';
 import { Layout } from 'antd';
 import { LayoutProps } from 'antd/lib/layout';
 import { pageContext, useLanguage, useLanguageType } from './locale';
-import { language } from '../../language/content/zh-cn';
 
 export function Page(props: LayoutProps): React.ReactElement {
   const [languageType, setLanguageType] = useLanguageType();
-  // const language = useLanguage(languageType);
+  const language = useLanguage(languageType);
 
   return (
     <pageContext.Provider
