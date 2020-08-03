@@ -1,1 +1,2 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[21],{205:function(e,t,o){"use strict";o.r(t),o.d(t,"language",(function(){return c}));var c={common:o(126).a,menu:{dir:"Directory",dom:{docStructure:"Document Structure"},mic:{index:"Mic Open Source"},preface:"Preface",typescript:{interfaceAndType:"interface & type"}},previewer:{autoUpdate:"This component will be updated automatically every 1s",demo:"Demo",reload:"Reload this component"}}}}]);
+//# sourceMappingURL=21.boundle.js.map
