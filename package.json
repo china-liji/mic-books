@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production -p",
+    "build": "webpack --mode=production",
     "start": "webpack-dev-server",
     "lint-all": "eslint --ext .tsx,.ts src/ demos/",
     "postlint-all": "npm run build"
