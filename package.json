@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production -p",
     "start": "webpack-dev-server",
-    "lint-all": "eslint --ext .tsx,.ts src/ demos/",
-    "postlint-all": "npm run build"
+    "lint-all": "eslint --ext .tsx,.ts src/ demos/"
   },
   "repository": {
     "type": "git",
