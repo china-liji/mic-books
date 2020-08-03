@@ -14,9 +14,9 @@ module.exports = (env, argv) => {
     // historyApiFallback: true,
   };
 
-  //if (!isProd) {
+  if (!isProd) {
     this.devtool = 'source-map';
-  //}
+  }
 
   this.entry = {
     'dist': path.resolve(__dirname, './src/index.tsx'),

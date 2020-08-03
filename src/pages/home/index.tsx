@@ -31,7 +31,7 @@ export function Home(): React.ReactElement | null {
   return (
     <Page className={useStyles()}>
       <menu.current config={config} />
-      <Previwer config={config} />
+      {/* <Previwer config={config} /> */}
       <LanguageSelector />
     </Page>
   );
