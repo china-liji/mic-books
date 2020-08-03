@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useStyles } from './use-styles';
 import { CodePreviewerProps } from './types';
-import { SyntaxHighlighter } from './syntax-highlighter';
+import { SyntaxHighlighter } from './locale';
 import { Tabs, Button, Tooltip } from 'antd';
 import { File } from './file';
 import { AutoUpdate } from './auto-update';
@@ -9,6 +9,7 @@ import { ReloadOutlined } from '@ant-design/icons';
 import { AutoUpdateDemo } from './auto-update/types';
 import { BlockComponent } from 'mic-global';
 import { pageContext } from '../page/locale';
+import { Suspense } from '../suspense';
 
 export function CodePreviewer({ className, demo, language, children, ...props }: CodePreviewerProps): React.ReactElement {
   const [demoKey, setDemoKey] = useState(0);
@@ -47,14 +48,18 @@ export function CodePreviewer({ className, demo, language, children, ...props }:
                 demo.files.map(({ name, source, type }: File, index: number): React.ReactElement => {
                   return (
                     <TabPane tab={name} key={`${index}`}>
-                      <SyntaxHighlighter language={type}>{source}</SyntaxHighlighter>
+                      <Suspense data-language={type}>
+                        <SyntaxHighlighter language={type}>{source}</SyntaxHighlighter>
+                      </Suspense>
                     </TabPane>
                   );
                 })
               }
             </Tabs>
           ) :
-          <SyntaxHighlighter language={language}>{children}</SyntaxHighlighter>
+          <Suspense data-language={language}>
+            <SyntaxHighlighter language={language}>{children}</SyntaxHighlighter>
+          </Suspense>
       }
     </BlockComponent>
   );
