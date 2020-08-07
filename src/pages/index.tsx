@@ -1,10 +1,10 @@
 import React from 'react';
-import { Home } from '../pages/home';
+import { Home } from './home';
 import { useStyles } from './use-styles';
-import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
+import { Route, Switch, HashRouter } from 'react-router-dom';
 import { useAppStyles } from 'mic-global';
 
-export function App(): React.ReactElement {
+export function Pages(): React.ReactElement {
   useStyles();
   useAppStyles();
 

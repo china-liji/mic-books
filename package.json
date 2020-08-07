@@ -23,7 +23,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "antd": "^4.2.5",
-    "mic-global": "^1.1.12",
+    "mic-global": "^1.1.16",
     "mic-inspector": "^1.2.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

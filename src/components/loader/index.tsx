@@ -9,12 +9,14 @@ export function Loader({ className, children, loader, ...props }: LoaderProps): 
   const [content, setContent] = useState(null as ReactNode);
 
   useEffect((): void => {
+    setContent(null);
+
     if (!loader) {
+      setLoading(false);
       return;
     }
 
     setLoading(true);
-    setContent(null);
 
     loader
       .then((node: ReactNode): ReactNode => {

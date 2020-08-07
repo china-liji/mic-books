@@ -1,9 +1,9 @@
 import React from 'react';
-import { Export } from '@/src/config/types';
 import { Demo } from '@/src/components/code-previewer/demo';
 import { CodePreviewer } from '@/src/components/code-previewer';
 import { PreviewerType, MarkdownRendererCodeParameter, MarkdownRenderers } from './types';
 import { Inspector, InspectorProps } from 'mic-inspector';
+import { Export } from '../types';
 
 export const { RegExp } = window;
 

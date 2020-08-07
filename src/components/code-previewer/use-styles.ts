@@ -81,7 +81,7 @@ export const useStyles = createStyles(
       },
     },
     '& > pre, & .ant-tabs-tabpane, & .ant-tabs-tabpane > pre, & .ant-tabs-tab-active': {
-      background: `${White.L2} !important`,
+      background: `${White.L5} !important`,
     },
   }
 );

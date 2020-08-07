@@ -1,34 +1,28 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import { Previwer } from './previewer';
 import { useStyles } from './use-styles';
 import { Menu } from './menu';
-import { Config } from '../../config';
-import { getDefaultConfig, getConfigByPath } from './locale';
-import { useParams, useHistory } from 'react-router-dom';
+import { context } from './locale';
 import { Page } from '@/src/components/page';
 import { LanguageSelector } from '@/src/components/language-selector';
+import { DocLoader } from './types';
 
 export function Home(): React.ReactElement | null {
-  const history = useHistory();
-  const key = useParams()[0] as string || '';
-
-  const config = useMemo((): Config => {
-    let config = getConfigByPath(key);
-
-    if (!config) {
-      config = getDefaultConfig() as Config;
-
-      history.replace(`/${config.key}`);
-    }
-
-    return config;
-  }, [key]);
+  const [title, setTitle] = useState('');
+  const [docLoader, setDocLoader] = useState(null as DocLoader | null);
 
   return (
-    <Page className={useStyles()}>
-      <Menu config={config} />
-      <Previwer config={config} />
-      <LanguageSelector />
-    </Page>
+    <context.Provider value={{
+      title,
+      setTitle,
+      docLoader,
+      setDocLoader,
+    }}>
+      <Page className={useStyles()}>
+        <Menu />
+        <Previwer />
+        <LanguageSelector />
+      </Page>
+    </context.Provider>
   );
 }

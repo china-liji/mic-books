@@ -6,14 +6,16 @@ export const language: Language = {
   menu: {
     dir: 'Directory',
     dom: {
-      docStructure: 'Document Structure',
-    },
-    mic: {
-      index: 'Mic Open Source',
+      node: 'HTML nodes',
     },
     preface: 'Preface',
+    tag: {
+      knowledge: 'Knowledge',
+      mit: 'MIT',
+      vs: 'vs.',
+    },
     typescript: {
-      interfaceAndType: 'interface & type',
+      interfaceAndType: 'interface vs. type',
     },
   },
   previewer: {
@@ -21,5 +23,8 @@ export const language: Language = {
     demo: 'Demo',
     error: 'Sorry, the document is not found..',
     reload: 'Reload this component',
+  },
+  text: {
+    introduction: 'Read me',
   },
 };

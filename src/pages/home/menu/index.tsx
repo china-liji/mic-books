@@ -1,50 +1,42 @@
-import React, { useMemo, useState, useEffect, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Menu as AntdMenu, Layout } from 'antd';
-import { getConfigByPath } from '../locale';
-import { renderMenuItem, fillOpenKeys } from './locale';
+import { renderGroups } from './locale';
 import { useStyles } from './use-styles';
-import { Title } from '../title';
-import { Config } from '@/src/config';
-import { MenuProps } from './types';
 import { REM } from 'mic-global';
-import { MenuItemProps } from 'antd/lib/menu/MenuItem';
 import { pageContext } from '@/src/components/page/locale';
+import { context } from '../locale';
+import { Language } from '@/src/language/types';
 
-export function Menu({ config }: MenuProps): React.ReactElement {
+export function Menu(): React.ReactElement {
   const className = useStyles();
-  const { Sider, Content } = Layout;
-  const [openKeys, setOpenKeys] = useState([config.key] as string[]);
+  const { Sider } = Layout;
   const { language }  = useContext(pageContext);
+  const { setDocLoader, setTitle } = useContext(context);
+  const [selectedKeys, setSelectedKeys] = useState([] as string[]);
+  let runtimePath = selectedKeys[0];
 
-  const selectedKeys = useMemo((): string[] => {
-    return [config.key];
-  }, [config]);
+  const onItemSelected = (path: string): void => {
+    runtimePath = path;
 
-  useEffect((): void => {
-    setOpenKeys(
-      fillOpenKeys(openKeys, config)
-    );
-  }, [config]);
+    setSelectedKeys([path]);
+  };
 
-  const onOpenChange = (keys: React.Key[]): void => {
-    setOpenKeys(keys as string[]);
+  const onItemUnselected = (path: string): void => {
+    // 如果在 unselected 之前， runtimePath 被设置过（onItemSelected），则不进行以下清空操作
+    if (runtimePath !== path) {
+      return;
+    }
+
+    setDocLoader(null);
+    setTitle('');
+    setSelectedKeys([]);
   };
 
   return (
     <Sider className={className} width={REM.XXXL1}>
-      <Layout>
-        <Title>{language?.menu.dir}</Title>
-        <Content>
-          <AntdMenu
-            selectedKeys={selectedKeys}
-            openKeys={openKeys}
-            onOpenChange={onOpenChange}
-            mode='inline'
-          >
-            {renderMenuItem()}
-          </AntdMenu>
-        </Content>
-      </Layout>
+      <AntdMenu mode='inline' selectedKeys={selectedKeys}>
+        {renderGroups(language as Language, onItemSelected, onItemUnselected)}
+      </AntdMenu>
     </Sider>
   );
 }

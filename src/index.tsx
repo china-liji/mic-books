@@ -1,8 +1,8 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './app';
+import { Pages } from './pages';
 
 ReactDOM.render(
-  <App />,
+  <Pages />,
   document.querySelector('body > article')
 );
