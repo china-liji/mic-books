@@ -9,11 +9,11 @@ import { pageContext } from '@/src/components/page/locale';
 
 export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onItemUnselected, ...props }: MenuItemProps): React.ReactElement {
   let { path } = config;
-  const { importer, title } = config;
+  const { title } = config;
   const key = (useParams()[0] as string || '').toLocaleLowerCase();
   const lowerCasePath = path.toLocaleLowerCase();
   const { Item } = Menu;
-  const { setDocLoader, setTitle } = useContext(context);
+  const { setConfig } = useContext(context);
   const { language } = useContext(pageContext);
   const matchedHtmlTag = /^\s*<\s*([\w.$_]+)\s*\/>\s*$/.exec(title);
 
@@ -30,12 +30,7 @@ export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onIte
     }
 
     onItemSelected(path);
-
-    setDocLoader(
-      importer()
-    );
-
-    setTitle(title);
+    setConfig(config);
   }, [key, path]);
 
   return (

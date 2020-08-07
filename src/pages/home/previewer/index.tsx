@@ -1,6 +1,5 @@
 import React, { useEffect, useState, ReactElement, useContext } from 'react';
 import { useStyles } from './use-styles';
-import { PreviewerProps } from './types';
 import { Layout } from 'antd';
 import { Title } from '../title';
 import { getMarkdownRenderers, Markdown } from './locale';
@@ -13,13 +12,13 @@ import { Export } from '../types';
 export function Previwer(): ReactElement {
   const { language } = useContext(pageContext);
   const className = useStyles(language);
-  const { title, docLoader } = useContext(context);
+  const { config } = useContext(context);
   const { Content } = Layout;
   const [hasError, setHasError] = useState(false);
   const [loader, setLoader] = useState(null as Promise<React.ReactNode> | null);
 
   useEffect((): void => {
-    if (!docLoader) {
+    if (!config) {
       setHasError(true);
       setLoader(null);
       return;
@@ -28,7 +27,8 @@ export function Previwer(): ReactElement {
     setHasError(false);
 
     setLoader(
-      docLoader
+      config
+        .importer()
         .then((expo: Export): ReactElement => {
           document.querySelector(`.${useStyles.originalClassName as string}`)!.scrollTop = 0;
 
@@ -43,11 +43,11 @@ export function Previwer(): ReactElement {
           return null;
         })
     );
-  }, [docLoader]);
+  }, [config?.path]);
 
   return (
     <Layout className={className}>
-      <Title>{title}</Title>
+      <Title>{config?.title}</Title>
       <Content data-error={hasError}>
         <Loader loader={loader} />
       </Content>

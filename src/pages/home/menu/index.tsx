@@ -11,7 +11,7 @@ export function Menu(): React.ReactElement {
   const className = useStyles();
   const { Sider } = Layout;
   const { language }  = useContext(pageContext);
-  const { setDocLoader, setTitle } = useContext(context);
+  const { setConfig } = useContext(context);
   const [selectedKeys, setSelectedKeys] = useState([] as string[]);
   let runtimePath = selectedKeys[0];
 
@@ -27,8 +27,7 @@ export function Menu(): React.ReactElement {
       return;
     }
 
-    setDocLoader(null);
-    setTitle('');
+    setConfig(null);
     setSelectedKeys([]);
   };
 

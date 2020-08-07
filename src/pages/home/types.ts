@@ -1,5 +1,6 @@
 import { Demo } from '@/src/components/code-previewer/demo';
 import { InspectorProps } from 'mic-inspector';
+import { Config } from './menu/config';
 
 export type Export = {
   [name: string]: Demo | InspectorProps;
@@ -18,11 +19,7 @@ export interface RouteParams {
 }
 
 export interface Context {
-  docLoader: DocLoader | null;
+  config: Config | null;
 
-  setDocLoader(docLoader: DocLoader | null): void;
-
-  setTitle(title: string): void;
-
-  title: string;
+  setConfig(config: Config | null): void;
 }

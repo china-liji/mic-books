@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Previwer } from './previewer';
 import { useStyles } from './use-styles';
 import { Menu } from './menu';
 import { context } from './locale';
 import { Page } from '@/src/components/page';
 import { LanguageSelector } from '@/src/components/language-selector';
-import { DocLoader } from './types';
+import { Config } from './menu/config';
 
 export function Home(): React.ReactElement | null {
-  const [title, setTitle] = useState('');
-  const [docLoader, setDocLoader] = useState(null as DocLoader | null);
+  const [config, setConfig] = useState(null as Config | null);
+
+  useEffect((): void => {
+    const { title, group } = config || {};
+
+    document.title = `${title ? `${title} - ${group as string} | `: ''}mic-books`;
+  }, [config?.path]);
 
   return (
     <context.Provider value={{
-      title,
-      setTitle,
-      docLoader,
-      setDocLoader,
+      config,
+      setConfig,
     }}>
       <Page className={useStyles()}>
         <Menu />
