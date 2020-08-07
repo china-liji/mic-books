@@ -48,47 +48,47 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
 
 export const getConfigs = ({ menu, text }: Language): Config[] => {
   return [
-    new Config(
-      'useState',
-      'use-state',
-      async (): Promise<Export> => {
-        return await import('@/demos/react/hooks/use-state') as unknown as Export;
-      },
-      'React',
-      ['hooks']
-    ),
-    new Config(
-      'useRef',
-      'use-ref',
-      async (): Promise<Export> => {
-        return await import('@/demos/react/hooks/use-ref') as unknown as Export;
-      }
-    ),
-    new Config(
-      'useCallback',
-      'use-callback',
-      async (): Promise<Export> => {
-        return await import('@/demos/react/hooks/use-callback') as unknown as Export;
-      }
-    ),
-    new Config(
-      menu.typescript.interfaceAndType,
-      'interface-vs-type',
-      async (): Promise<Export> => {
-        return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
-      },
-      'TypeScript',
-      [PrimaryTag.Vs]
-    ),
-    new Config(
-      menu.dom.node,
-      'doc',
-      async (): Promise<Export> => {
-        return await import('@/demos/dom/doc') as unknown as Export;
-      },
-      'DOM',
-      [PrimaryTag.Knowledge]
-    ),
+    // new Config(
+    //   'useState',
+    //   'use-state',
+    //   async (): Promise<Export> => {
+    //     return await import('@/demos/react/hooks/use-state') as unknown as Export;
+    //   },
+    //   'React',
+    //   ['hooks']
+    // ),
+    // new Config(
+    //   'useRef',
+    //   'use-ref',
+    //   async (): Promise<Export> => {
+    //     return await import('@/demos/react/hooks/use-ref') as unknown as Export;
+    //   }
+    // ),
+    // new Config(
+    //   'useCallback',
+    //   'use-callback',
+    //   async (): Promise<Export> => {
+    //     return await import('@/demos/react/hooks/use-callback') as unknown as Export;
+    //   }
+    // ),
+    // new Config(
+    //   menu.typescript.interfaceAndType,
+    //   'interface-vs-type',
+    //   async (): Promise<Export> => {
+    //     return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
+    //   },
+    //   'TypeScript',
+    //   [PrimaryTag.Vs]
+    // ),
+    // new Config(
+    //   menu.dom.node,
+    //   'doc',
+    //   async (): Promise<Export> => {
+    //     return await import('@/demos/dom/doc') as unknown as Export;
+    //   },
+    //   'DOM',
+    //   [PrimaryTag.Knowledge]
+    // ),
     new Config(
       text.introduction,
       'readme',
