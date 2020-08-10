@@ -1,30 +1,33 @@
 import React from 'react';
 import { Export } from '../types';
-import { Config } from './config';
+import { Config } from '../menu-config';
 import { Language } from '@/src/language/types';
-import { Menu } from 'antd';
 import { MenuItem } from '../menu-item';
-import { MenuItemProps, PrimaryTag } from '../menu-item/types';
+import { MenuItemProps } from '../menu-item/types';
+import { PrimaryTag } from '../menu-item-tags/types';
+import { MenuItemGroup } from '../menu-item-group';
 
 export const renderGroups = (language: Language, onItemSelected: MenuItemProps['onItemSelected'], onItemUnselected: MenuItemProps['onItemUnselected']): React.ReactElement[] => {
-  let group = '';
+  let cfg = null as Config | null;
   const groups = [] as React.ReactElement[];
   const items = [] as React.ReactElement[];
-  const { ItemGroup } = Menu;
 
   for (const config of getConfigs(language)) {
-    const { group: g, path } = config;
+    const { group, path } = config;
+    const { group: g } = cfg || {} as Config;
 
     if (group !== g) {
       if (items.length > 0) {
         groups.push(
-          <ItemGroup key={group} title={group}>{[...items]}</ItemGroup>
+          <MenuItemGroup key={g} config={cfg!}>
+            {[...items]}
+          </MenuItemGroup>
         );
 
         items.splice(0);
       }
 
-      group = g;
+      cfg = config;
     }
 
     items.push(
@@ -39,7 +42,9 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
 
   if (items.length > 0) {
     groups.push(
-      <ItemGroup key={group} title={group}>{[...items]}</ItemGroup>
+      <MenuItemGroup key={cfg!.group} config={cfg!}>
+        {[...items]}
+      </MenuItemGroup>
     );
   }
 
@@ -48,47 +53,51 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
 
 export const getConfigs = ({ menu, text }: Language): Config[] => {
   return [
-    // new Config(
-    //   'useState',
-    //   'use-state',
-    //   async (): Promise<Export> => {
-    //     return await import('@/demos/react/hooks/use-state') as unknown as Export;
-    //   },
-    //   'React',
-    //   ['hooks']
-    // ),
-    // new Config(
-    //   'useRef',
-    //   'use-ref',
-    //   async (): Promise<Export> => {
-    //     return await import('@/demos/react/hooks/use-ref') as unknown as Export;
-    //   }
-    // ),
-    // new Config(
-    //   'useCallback',
-    //   'use-callback',
-    //   async (): Promise<Export> => {
-    //     return await import('@/demos/react/hooks/use-callback') as unknown as Export;
-    //   }
-    // ),
-    // new Config(
-    //   menu.typescript.interfaceAndType,
-    //   'interface-vs-type',
-    //   async (): Promise<Export> => {
-    //     return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
-    //   },
-    //   'TypeScript',
-    //   [PrimaryTag.Vs]
-    // ),
-    // new Config(
-    //   menu.dom.node,
-    //   'doc',
-    //   async (): Promise<Export> => {
-    //     return await import('@/demos/dom/doc') as unknown as Export;
-    //   },
-    //   'DOM',
-    //   [PrimaryTag.Knowledge]
-    // ),
+    new Config(
+      'useState',
+      'use-state',
+      async (): Promise<Export> => {
+        return await import('@/demos/react/hooks/use-state') as unknown as Export;
+      },
+      'React',
+      ['hooks']
+    ),
+    new Config(
+      'useRef',
+      'use-ref',
+      async (): Promise<Export> => {
+        return await import('@/demos/react/hooks/use-ref') as unknown as Export;
+      },
+      void 0,
+      ['hooks']
+    ),
+    new Config(
+      'useCallback',
+      'use-callback',
+      async (): Promise<Export> => {
+        return await import('@/demos/react/hooks/use-callback') as unknown as Export;
+      },
+      void 0,
+      ['hooks']
+    ),
+    new Config(
+      menu.typescript.interfaceAndType,
+      'interface-vs-type',
+      async (): Promise<Export> => {
+        return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
+      },
+      'TypeScript',
+      [PrimaryTag.Vs]
+    ),
+    new Config(
+      menu.dom.node,
+      'doc',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom/doc') as unknown as Export;
+      },
+      'DOM',
+      [PrimaryTag.Knowledge]
+    ),
     new Config(
       text.introduction,
       'readme',
@@ -96,7 +105,8 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
         return await import('@/demos/mic/mic-inspector/readme') as unknown as Export;
       },
       'Mic-Inspector',
-      [PrimaryTag.Mit, PrimaryTag.Web, PrimaryTag.Npm, PrimaryTag.Git]
+      [],
+      [PrimaryTag.Mit, PrimaryTag.Npm, PrimaryTag.Git, PrimaryTag.Web]
     ),
     new Config(
       '<Inspector />',
@@ -105,14 +115,16 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
         return await import('@/demos/mic/mic-inspector/inspector') as unknown as Export;
       },
       void 0,
-      []
+      ['object']
     ),
     new Config(
       '<DomInspector />',
       'dom-inspector',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/dom-inspector') as unknown as Export;
-      }
+      },
+      void 0,
+      ['dom']
     ),
     new Config(
       '<Properties />',

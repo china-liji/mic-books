@@ -1,4 +1,4 @@
-import { createStyles, EM, BW, Gray, REM, Pixel, White, Black } from 'mic-global';
+import { createStyles, EM, Gray, REM, Pixel, White, Black } from 'mic-global';
 import { Language } from '@/src/language/types';
 import { Blue } from '@/src/app/theme/color';
 
@@ -8,8 +8,6 @@ export const useStyles = createStyles(
     fontSize: REM.S4,
     padding: 0,
     display: 'block',
-    borderLeft: `${BW.Default} solid ${Gray.L2}`,
-    borderRight: `${BW.Default} solid ${Gray.L2}`,
     '& > header': {
       fontSize: EM.H1,
       color: Blue.L1,

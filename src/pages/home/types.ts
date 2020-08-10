@@ -1,6 +1,6 @@
 import { Demo } from '@/src/components/code-previewer/demo';
 import { InspectorProps } from 'mic-inspector';
-import { Config } from './menu/config';
+import { Config } from './menu-config';
 
 export type Export = {
   [name: string]: Demo | InspectorProps;

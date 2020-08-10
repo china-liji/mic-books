@@ -4,17 +4,15 @@ import { MenuItemProps } from './types';
 import { Link, useParams } from 'react-router-dom';
 import { context } from '../locale';
 import { useStyles } from './use-styles';
-import { renderTags } from './locale';
-import { pageContext } from '@/src/components/page/locale';
+import { MenuItemTags } from '../menu-item-tags';
 
 export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onItemUnselected, ...props }: MenuItemProps): React.ReactElement {
   let { path } = config;
-  const { title } = config;
+  const { title, tags } = config;
   const key = (useParams()[0] as string || '').toLocaleLowerCase();
   const lowerCasePath = path.toLocaleLowerCase();
   const { Item } = Menu;
   const { setConfig } = useContext(context);
-  const { language } = useContext(pageContext);
   const matchedHtmlTag = /^\s*<\s*([\w.$_]+)\s*\/>\s*$/.exec(title);
 
   path = path.toLocaleLowerCase();
@@ -37,7 +35,7 @@ export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onIte
     <Item className={useStyles()} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
       <Link to={`/${lowerCasePath}`}>
         <q>{matchedHtmlTag ? matchedHtmlTag[1] : title}</q>
-        <span>{renderTags(config, language!)}</span>
+        <MenuItemTags tags={tags} />
       </Link>
     </Item>
   );

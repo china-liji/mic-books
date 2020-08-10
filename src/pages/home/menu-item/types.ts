@@ -1,19 +1,5 @@
 import { MenuItemProps as AntdMenuItemProps } from 'antd/lib/menu/MenuItem';
-import { Config } from '../menu/config';
-
-export enum PrimaryTag {
-  Git = 'GitHub',
-
-  Knowledge = 'knowledge',
-
-  Mit = 'MIT',
-
-  Npm = 'NPM',
-
-  Web = 'web',
-
-  Vs = 'vs'
-}
+import { Config } from '../menu-config';
 
 export interface MenuItemProps extends AntdMenuItemProps {
   children?: never[];

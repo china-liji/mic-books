@@ -4,6 +4,15 @@ export const useStyles = createStyles(
   'menu-item',
   {
     overflow: 'visible !important',
+    margin: `${REM.XS4} 0 ${REM.XS7} 0`,
+    width: Percent.M1,
+    fontFamily: 'Avenir, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji, sans-serif',
+    '& > a': {
+      fontSize: REM.S4,
+    },
+    '&::after': {
+      borderRightWidth: REM.XS2,
+    },
     '&[data-html-tag="false"] a > q': {
       quotes: 'none',
     },
@@ -16,28 +25,6 @@ export const useStyles = createStyles(
       },
       '&::after': {
         content: '" />"',
-      },
-    },
-    '& a > span': {
-      display: 'inline-block',
-      position: 'relative',
-      zIndex: Level.S3,
-      lineHeight: EM.M1,
-      marginLeft: REM.XS3,
-      transformOrigin: 'left',
-      transform: 'scale(0.85)',
-      verticalAlign: 'sub',
-    },
-    '& .ant-tag': {
-      lineHeight: 1,
-      margin: `0 ${REM.XS6} 0 0`,
-      padding: `${REM.XS2} ${REM.XS3}`,
-      '&:not([data-opacity="true"])': {
-        color: 'transparent',
-        textShadow: `0 0 0 ${White.L1}`,
-      },
-      '&[data-opacity="true"]': {
-        opacity: Percent.S9,
       },
     },
   }

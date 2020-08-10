@@ -5,7 +5,7 @@ import { Menu } from './menu';
 import { context } from './locale';
 import { Page } from '@/src/components/page';
 import { LanguageSelector } from '@/src/components/language-selector';
-import { Config } from './menu/config';
+import { Config } from './menu-config';
 
 export function Home(): React.ReactElement | null {
   const [config, setConfig] = useState(null as Config | null);

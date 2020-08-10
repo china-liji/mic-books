@@ -2,10 +2,9 @@ import React from 'react';
 import { Tag } from 'antd';
 import { PrimaryTag } from './types';
 import { Language } from '@/src/language/types';
-import { Config } from '../menu/config';
-import { Red } from '@/src/app/theme/color';
+import { Black } from 'mic-global';
 
-const colors = ['magenta', 'volcano', 'blue', 'purple', 'green', 'purple', 'orange', 'red'];
+const colors = ['magenta', 'volcano', 'blue', 'geekblue', 'purple', 'cyan', 'orange', 'red'];
 
 export const getTagInfo = (tag: string, { menu: { tag: translation } }: Language): [string, string, boolean] => {
   let color: string;
@@ -15,7 +14,7 @@ export const getTagInfo = (tag: string, { menu: { tag: translation } }: Language
   {
     switch (tag) {
       case PrimaryTag.Knowledge:
-        color = Red.L1;
+        color = Black.L5;
         tag = `👍 ${translation.knowledge}`;
         opacity = false;
         break block;
@@ -44,8 +43,8 @@ export const getTagInfo = (tag: string, { menu: { tag: translation } }: Language
   return [color, tag, opacity];
 };
 
-export const renderTags = ({ tags, group }: Config, language: Language): React.ReactElement[] => {
-  return [group, ...tags].map((tag: string, index: number): React.ReactElement => {
+export const renderTags = (tags: string[], language: Language): React.ReactElement[] => {
+  return tags.map((tag: string, index: number): React.ReactElement => {
     const [color, text, opacity] = getTagInfo(tag, language);
 
     return <Tag key={index} data-opacity={opacity} title={text} color={color}>{text}</Tag>;
