@@ -31,6 +31,12 @@ export function UsageDemo() {
         </dd>
       </dl>
       <dl>
+        <dt>props.separator = '='</dt>
+        <dd>
+          <Property name='name' value='michael' separator='=' />
+        </dd>
+      </dl>
+      <dl>
         <dt>descriptor mode</dt>
         <dd>
           <Property descriptor={descriptor} />

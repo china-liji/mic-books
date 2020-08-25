@@ -19,6 +19,7 @@ import(usageDemo);
 ### Props
 * **value** · *required* - A specific method that will be called by click this component, and display the returned value.
 * **owner** · *required* - A specific object that will be used as the 'this' in the getter method.
+* **onAccess** · *optional* - An event triggered by click this component.
 * **...props** · *extends* - PropertyValueProps
 
 ### GetterStatus
@@ -28,6 +29,6 @@ import { GetterStatus } from 'mic-inspector';
 ```
 
 * Inspect this object.
-```inspector
-inspect(getterStatusProps);
+```inline-demo
+import(getterStatusDemo);
 ```

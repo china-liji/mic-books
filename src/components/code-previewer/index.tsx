@@ -10,6 +10,7 @@ import { AutoUpdateDemo } from './auto-update/types';
 import { BlockComponent } from 'mic-global';
 import { pageContext } from '../page/locale';
 import { Suspense } from '../suspense';
+import { InlineDemo } from '../inline-demo';
 
 export function CodePreviewer({ className, demo, language, children, ...props }: CodePreviewerProps): React.ReactElement {
   const [demoKey, setDemoKey] = useState(0);
@@ -40,7 +41,7 @@ export function CodePreviewer({ className, demo, language, children, ...props }:
                         />
                       </Tooltip>
                     </p>
-                    {demo.autoUpdate ? <AutoUpdate key={demoKey} demo={demo as AutoUpdateDemo} /> : <demo.component key={demoKey} />}
+                    {demo.autoUpdate ? <AutoUpdate key={demoKey} demo={demo as AutoUpdateDemo} /> : <InlineDemo key={demoKey} demo={demo} />}
                   </TabPane> :
                   null
               }

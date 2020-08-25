@@ -1,4 +1,4 @@
-import { createStyles, EM, Gray, REM, Pixel, White, Black } from 'mic-global';
+import { createStyles, EM, Gray, REM, Pixel, White, Black, Percent } from 'mic-global';
 import { Language } from '@/src/language/types';
 import { Blue } from '@/src/app/theme/color';
 
@@ -44,7 +44,7 @@ export const useStyles = createStyles(
       },
     },
     '& del': {
-      opacity: 0.45,
+      opacity: Percent.G2,
     },
     '& ul, ol': {
       paddingLeft: REM.M1,
@@ -55,13 +55,11 @@ export const useStyles = createStyles(
     '& li:not(:last-child)': {
       marginBottom: REM.XS2,
     },
-    '& .suspense > .mic-inspector': {
-      fontSize: Pixel.M2,
-    },
     '& *:not(pre) > code': {
       color: Blue.L1,
       fontSize: EM.S7,
       padding: [REM.XS2, REM.XS3],
+      margin: [0, REM.XS2],
       borderRadius: 2,
       whiteSpace: 'nowrap',
       backgroundColor: White.L6,
@@ -81,6 +79,9 @@ export const useStyles = createStyles(
         borderRight: 0,
         whiteSpace: 'pre',
       },
+    },
+    '& p': {
+      marginBottom: REM.XS5,
     },
   }
 );

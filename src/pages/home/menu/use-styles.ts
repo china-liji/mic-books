@@ -8,6 +8,7 @@ export const useStyles = createStyles(
     '& .ant-menu': {
       border: 'none',
       overflow: 'hidden',
+      backgroundColor: White.L3,
     },
     '& .ant-menu-item-group-title, & .ant-menu-item-only-child': {
       paddingLeft: `${REM.S6} !important`,

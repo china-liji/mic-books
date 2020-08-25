@@ -26,6 +26,6 @@ import { Radix } from 'mic-inspector';
 ```
 
 * Inspect this object.
-```inspector
-inspect(radixProps);
+```inline-demo
+import(radixDemo);
 ```

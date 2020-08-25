@@ -21,9 +21,6 @@ export const useStyles = createStyles(
         textShadow: `0 0 0 ${White.L1}`,
         fontWeight: 'bold',
       },
-      '&[data-opacity="true"]': {
-        opacity: Percent.G2,
-      },
     },
   }
 );

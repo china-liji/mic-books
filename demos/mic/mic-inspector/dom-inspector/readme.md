@@ -15,4 +15,5 @@ import(usageDemo);
 
 ### Props
 * **dom** · *required* - A specific node name to inspect.
+* **expandLevel* · *optional* - An integer specifying to which level the tree should be initially expanded.
 * **...props** · *extends* - HTMLProps&lt;HTMLDivElement&gt;

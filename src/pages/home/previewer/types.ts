@@ -1,7 +1,7 @@
 export enum PreviewerType {
   Demo = 'demo',
 
-  Inspector = 'inspector'
+  InlineDemo = 'inline-demo'
 }
 
 export interface MarkdownRenderers {

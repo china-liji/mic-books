@@ -4,6 +4,7 @@ import { File } from '@/src/components/code-previewer/file';
 import { UsageDemo } from './usage-demo';
 import usageDemoSource from './usage-demo?txt';
 import { InspectorProps, Radix } from 'mic-inspector';
+import { RadixDemo } from './radix-demo';
 
 export const usageDemo = new Demo(
   [
@@ -14,10 +15,9 @@ export const usageDemo = new Demo(
   true
 );
 
-export const radixProps: InspectorProps = {
-  name: 'Radix',
-  value: Radix,
-  defaultExpand: true,
-};
+export const radixDemo = new Demo(
+  [],
+  RadixDemo
+);
 
 export default markdown;

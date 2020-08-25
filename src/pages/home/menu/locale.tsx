@@ -93,12 +93,47 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
             [PrimaryTag.Vs]
           ),
           new Config(
-            menu.dom.node,
-            'doc',
+            menu.preface,
+            'readme',
             async (): Promise<Export> => {
-              return await import('@/demos/dom/doc') as unknown as Export;
+              return await import('@/demos/dom-nodes/readme.md') as unknown as Export;
             },
-            'DOM',
+            'DOM Nodes'
+          ),
+          new Config(
+            'Node',
+            'node',
+            async (): Promise<Export> => {
+              return await import('@/demos/dom-nodes/node') as unknown as Export;
+            },
+            void 0,
+            [PrimaryTag.Knowledge]
+          ),
+          new Config(
+            'CharacterData',
+            'character-data',
+            async (): Promise<Export> => {
+              return await import('@/demos/dom-nodes/character-data') as unknown as Export;
+            },
+            void 0,
+            [PrimaryTag.Knowledge]
+          ),
+          new Config(
+            'Element',
+            'element',
+            async (): Promise<Export> => {
+              return await import('@/demos/dom-nodes/element') as unknown as Export;
+            },
+            void 0,
+            [PrimaryTag.Knowledge]
+          ),
+          new Config(
+            'HTMLElement',
+            'html-element',
+            async (): Promise<Export> => {
+              return await import('@/demos/dom-nodes/html-element') as unknown as Export;
+            },
+            void 0,
             [PrimaryTag.Knowledge]
           ),
         ]: []

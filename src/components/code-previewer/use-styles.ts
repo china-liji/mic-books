@@ -20,6 +20,9 @@ export const useStyles = createStyles(
       background: `${White.L1} !important`,
       '&.ant-tabs-tab-active': {
         borderBottomColor: 'transparent !important',
+        '& > .ant-tabs-tab-btn': {
+          fontWeight: 'normal',
+        },
       },
       '&:not(.ant-tabs-tab-active)': {
         borderBottomColor: `${Gray.L2} !important`,
@@ -30,7 +33,6 @@ export const useStyles = createStyles(
     },
     '& .ant-tabs-tabpane[id$="panel-demo"]': {
       position: 'relative',
-      fontSize: REM.S2,
       padding: [REM.S1, REM.S4],
       overflow: 'auto',
       minHeight: REM.L1,

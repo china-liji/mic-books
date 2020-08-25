@@ -5,8 +5,7 @@ export const language: Language = {
   common,
   menu: {
     dir: 'Directory',
-    dom: {
-      node: 'HTML nodes',
+    htmlNodes: {
     },
     preface: 'Preface',
     tag: {

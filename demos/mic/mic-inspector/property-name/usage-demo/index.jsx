@@ -22,6 +22,12 @@ export function UsageDemo() {
           <PropertyName name={0} type={DescriptorNameType.Index} />
         </dd>
       </dl>
+      <dl>
+        <dt>props.separator = '='</dt>
+        <dd>
+          <PropertyName name='key' separator='=' />
+        </dd>
+      </dl>
     </div>
   );
 }

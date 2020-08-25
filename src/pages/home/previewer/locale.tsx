@@ -4,6 +4,7 @@ import { CodePreviewer } from '@/src/components/code-previewer';
 import { PreviewerType, MarkdownRendererCodeParameter, MarkdownRenderers } from './types';
 import { Inspector, InspectorProps } from 'mic-inspector';
 import { Export } from '../types';
+import { InlineDemo } from '@/src/components/inline-demo';
 
 export const { RegExp } = window;
 
@@ -24,24 +25,35 @@ export const extractParamater = (value: string, type: string): string => {
 };
 
 export const renderCodePreviewer = (expo?: Export, value = '', language = ''): React.ReactElement => {
-  if (language === PreviewerType.Demo) {
+  demoBlock:
+  {
+    switch (language) {
+      case PreviewerType.Demo:
+      case PreviewerType.InlineDemo:
+        break;
+  
+      default:
+        break demoBlock;
+    }
+
     const param = extractParamater(value, 'import');
 
-    if (param && expo) {
-      const demo = expo[param];
-
-      if (demo && demo instanceof Demo) {
-        return <CodePreviewer demo={demo} language={language} />;
-      }
+    if (!param || !expo) {
+      break demoBlock;
     }
-  }
-  else if (language === PreviewerType.Inspector) {
-    const param = extractParamater(value, 'inspect');
 
-    if (param && expo && expo[param]) {
-      return <Inspector {...expo[param] as InspectorProps} />;
+    const demo = expo[param];
+
+    if (!demo || demo instanceof Demo === false) {
+      break demoBlock;
     }
-  }
 
+    if (language === PreviewerType.InlineDemo) {
+      return <InlineDemo demo={demo} />;
+    }
+
+    return <CodePreviewer demo={demo} language={language} />;
+  }
+  
   return <CodePreviewer language={language}>{value}</CodePreviewer>;
 };

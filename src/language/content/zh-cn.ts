@@ -4,10 +4,9 @@ export const language = {
   common,
   menu: {
     dir: '目录',
-    dom: {
-      node: '文档结构',
+    htmlNodes: {
     },
-    preface: '前言',
+    preface: '序',
     tag: {
       knowledge: '冷知识',
       mit: '开源',

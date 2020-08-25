@@ -3703,16 +3703,6 @@ methods@~1.1.2:
   resolved "https://registry.npmjs.org/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
-mic-global@^1.1.12:
-  version "1.1.13"
-  resolved "https://registry.npmjs.org/mic-global/-/mic-global-1.1.13.tgz#715b8d108b882af6bd8453ea5d9340f2b3195f51"
-  integrity sha512-xeHSwV6CX9YaJUYng8hQEbTvpFVsWkoxhvvVVdBhfju8TYCpYPPQoXL6Z3litRcqL3uy2Ru08/DeUcIdElAt6A==
-  dependencies:
-    jss "^10.3.0"
-    react "^16.13.1"
-    react-dom "^16.13.1"
-    react-jss "^10.1.1"
-
 mic-global@^1.1.16:
   version "1.1.16"
   resolved "https://registry.npmjs.org/mic-global/-/mic-global-1.1.16.tgz#ae84f1299428697be344020af261215f4f60bec6"
@@ -3723,12 +3713,12 @@ mic-global@^1.1.16:
     react-dom "^16.13.1"
     react-jss "^10.1.1"
 
-mic-inspector@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.npmjs.org/mic-inspector/-/mic-inspector-1.2.5.tgz#cabd4242652136db2ce6a375b44bb0ea93ccdc75"
-  integrity sha512-yAEpRM1nK1ffhJX4HOszL5Y0zKLzBbVCr7jFRCfMvFsRBZXtjaqygyvTBdq2aCqlV5lIZNosbD27Dz12TddlsA==
+mic-inspector@^1.2.18:
+  version "1.2.18"
+  resolved "https://registry.npmjs.org/mic-inspector/-/mic-inspector-1.2.18.tgz#9d293f177b3acbc028706fa635163eedfc310129"
+  integrity sha512-N8drlVJWLWwhvh5MVm08VcSFLW7sQRDFG39w0RFwYdvy4ydii+Xwe9b5kZia+ML4RyA5b1lBp0UohtuRp/RrMg==
   dependencies:
-    mic-global "^1.1.12"
+    mic-global "^1.1.16"
     react "^16.13.1"
     react-dom "^16.13.1"
     react-inspector "^5.0.1"
