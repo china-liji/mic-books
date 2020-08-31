@@ -1,6 +1,6 @@
 import { createStyles, REM, White, BW } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useMenuStyles = createStyles(
   'menu',
   {
     overflow: 'auto',

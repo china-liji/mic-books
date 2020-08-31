@@ -1,6 +1,6 @@
 import { createStyles, REM } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useLoaderStyles = createStyles(
   'loader',
   {
     '& .ant-spin-spinning': {

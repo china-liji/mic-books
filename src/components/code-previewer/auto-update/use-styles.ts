@@ -1,6 +1,6 @@
 import { createStyles, REM, BW, Gray } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useAutoUpdateStyles = createStyles(
   'auto-update',
   {
     '& > *': {

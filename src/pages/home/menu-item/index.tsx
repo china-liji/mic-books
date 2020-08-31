@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Menu } from 'antd';
 import { MenuItemProps } from './types';
 import { Link, useParams } from 'react-router-dom';
-import { context } from '../locale';
-import { useStyles } from './use-styles';
+import { homePageContext } from '../locale';
+import { useMenuItemStyles } from './use-styles';
 import { MenuItemTags } from '../menu-item-tags';
 
 export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onItemUnselected, ...props }: MenuItemProps): React.ReactElement {
@@ -11,7 +11,7 @@ export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onIte
   const { title, tags } = config;
   const key = (useParams()[0] as string || '').toLocaleLowerCase();
   const { Item } = Menu;
-  const { setConfig } = useContext(context);
+  const { setConfig } = useContext(homePageContext);
   const matchedHtmlTag = /^\s*<\s*([\w.$_]+)\s*\/>\s*$/.exec(title);
 
   path = path.split(' ').join('-').toLocaleLowerCase();
@@ -31,7 +31,7 @@ export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onIte
   }, [key, path]);
 
   return (
-    <Item className={useStyles()} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
+    <Item className={useMenuItemStyles()} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
       <Link to={`/${path}`}>
         <q>{matchedHtmlTag ? matchedHtmlTag[1] : title}</q>
         <MenuItemTags tags={tags} />

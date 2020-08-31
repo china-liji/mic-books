@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AutoUpdateProps } from './types';
-import { useStyles } from './use-styles';
+import { useAutoUpdateStyles } from './use-styles';
 import { BlockComponent } from 'mic-global';
 import { pageContext } from '../../page/locale';
 import { InlineDemo } from '../../inline-demo';
@@ -22,7 +22,7 @@ export function AutoUpdate({ demo, className, ...props }: AutoUpdateProps): Reac
   }, [times]);
 
   return (
-    <BlockComponent className={useStyles(className)} {...props}>
+    <BlockComponent className={useAutoUpdateStyles(className)} {...props}>
       <p>{language?.previewer.autoUpdate}</p>
       <InlineDemo demo={demo} />
     </BlockComponent>

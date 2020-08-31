@@ -1,6 +1,6 @@
 import { createStyles, REM, Gray, White, BW, EM, State, Level, Pixel } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useCodePreviwerStyles = createStyles(
   'code-previewer',
   {
     margin: [REM.S1, 0],

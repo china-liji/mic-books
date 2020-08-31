@@ -22,6 +22,10 @@ export const language: Language = {
     demo: 'Demo',
     error: 'Sorry, the document is not found..',
     reload: 'Reload this component',
+    page: {
+      prev: 'Previous page, shortcut keys - Up, Left',
+      next: 'Next page, shortcut keys - Entry, Space, Down, Right',
+    },
   },
   text: {
     introduction: 'Read me',

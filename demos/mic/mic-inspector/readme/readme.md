@@ -16,17 +16,17 @@ import(usageDemo)
 ```
 
 ### Components
-* [&lt;Inspector /&gt;](#/mic/mic-inspector/inspector)
-* [&lt;DomInspector /&gt;](#/mic/mic-inspector/dom-inspector)
-* [&lt;Properties /&gt;](#/mic/mic-inspector/properties)
-* [&lt;Property /&gt;](#/mic/mic-inspector/property)
-* [&lt;PropertyName /&gt;](#/mic/mic-inspector/property-name)
-* [&lt;PropertyValue /&gt;](#/mic/mic-inspector/property-value)
-* [&lt;GetterValue /&gt;](#/mic/mic-inspector/getter-value)
-* [&lt;NumberValue /&gt;](#/mic/mic-inspector/number-value)
-* [&lt;ObjectValue /&gt;](#/mic/mic-inspector/object-value)
-* [&lt;StringValue /&gt;](#/mic/mic-inspector/string-value)
-* [&lt;UnknownValue /&gt;](#/mic/mic-inspector/unknown-value)
+* [&lt;Inspector /&gt;](#/mic-inspector/inspector)
+* [&lt;DomInspector /&gt;](#/mic-inspector/dom-inspector)
+* [&lt;Properties /&gt;](#/mic-inspector/properties)
+* [&lt;Property /&gt;](#/mic-inspector/property)
+* [&lt;PropertyName /&gt;](#/mic-inspector/property-name)
+* [&lt;PropertyValue /&gt;](#/mic-inspector/property-value)
+* [&lt;GetterValue /&gt;](#/mic-inspector/getter-value)
+* [&lt;NumberValue /&gt;](#/mic-inspector/number-value)
+* [&lt;ObjectValue /&gt;](#/mic-inspector/object-value)
+* [&lt;StringValue /&gt;](#/mic-inspector/string-value)
+* [&lt;UnknownValue /&gt;](#/mic-inspector/unknown-value)
 
 ### Urls
 * Repository: [https://github.com/china-liji/mic-inspector](https://github.com/china-liji/mic-inspector)

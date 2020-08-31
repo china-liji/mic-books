@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Previwer } from './previewer';
-import { useStyles } from './use-styles';
+import { useHomeStyles } from './use-styles';
 import { Menu } from './menu';
-import { context } from './locale';
+import { homePageContext } from './locale';
 import { Page } from '@/src/components/page';
-import { LanguageSelector } from '@/src/components/language-selector';
 import { Config } from './menu-config';
 
 export function Home(): React.ReactElement | null {
   const [config, setConfig] = useState(null as Config | null);
+  const { Provider } = homePageContext;
 
   useEffect((): void => {
     const { title, group } = config || {};
@@ -17,15 +17,14 @@ export function Home(): React.ReactElement | null {
   }, [config?.path]);
 
   return (
-    <context.Provider value={{
+    <Provider value={{
       config,
       setConfig,
     }}>
-      <Page className={useStyles()}>
+      <Page className={useHomeStyles()}>
         <Menu />
         <Previwer />
-        <LanguageSelector />
       </Page>
-    </context.Provider>
+    </Provider>
   );
 }

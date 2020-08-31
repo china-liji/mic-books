@@ -1,6 +1,6 @@
-import { createStyles, Level, REM, EM, Percent, White } from 'mic-global';
+import { createStyles, REM, Percent } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useMenuItemStyles = createStyles(
   'menu-item',
   {
     overflow: 'visible !important',
@@ -19,9 +19,16 @@ export const useStyles = createStyles(
     '&[data-html-tag="true"] a > q': {
       '&::before, &::after': {
         opacity: Percent.G1,
+        fontSize: REM.S2,
       },
       '&::before': {
         content: '"<"',
+        position: 'absolute',
+        left: REM.S6,
+        top: 0,
+        marginLeft: `-${REM.XS1}`,
+        height: Percent.M1,
+        transform: `translateX(-${Percent.M1})`,
       },
       '&::after': {
         content: '" />"',

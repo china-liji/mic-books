@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 import { Spin } from 'antd';
-import { useStyles } from './use-styles';
+import { useLoaderStyles } from './use-styles';
 import { LoaderProps } from './types';
 import { BlockComponent } from 'mic-global';
 
@@ -29,7 +29,7 @@ export function Loader({ className, children, loader, ...props }: LoaderProps): 
   }, [loader]);
 
   return (
-    <BlockComponent className={useStyles(className)} {...props}>
+    <BlockComponent className={useLoaderStyles(className)} {...props}>
       { loading ? <Spin /> : content || children }
     </BlockComponent>
   );

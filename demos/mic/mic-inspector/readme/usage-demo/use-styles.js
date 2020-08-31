@@ -1,6 +1,6 @@
 import { createStyles, EM } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useUsageDemoStyles = createStyles(
   'usage-demo',
   {
     '& > dl': {

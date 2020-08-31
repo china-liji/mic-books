@@ -21,6 +21,10 @@ export const language = {
     demo: '实例效果',
     error: '抱歉，暂未找到指定文档..',
     reload: '重新加载组件',
+    page: {
+      prev: '上一页，快捷键 - Up、Left',
+      next: '下一页，快捷键 - Entry、Space、Down、Right',
+    },
   },
   text: {
     introduction: '简介',

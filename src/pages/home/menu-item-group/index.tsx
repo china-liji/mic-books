@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { MenuItemGroupProps } from './types';
 import { MenuItemTags } from '../menu-item-tags';
-import { useStyles } from './use-styles';
+import { useMenuItemGroupStyles } from './use-styles';
 
 export function MenuItemGroup({ config, title, ...props }: MenuItemGroupProps): React.ReactElement {
   const { group, groupTags } = config;
@@ -12,7 +12,7 @@ export function MenuItemGroup({ config, title, ...props }: MenuItemGroupProps): 
 
   return (
     <ItemGroup
-      className={useStyles()}
+      className={useMenuItemGroupStyles()}
       title={
         <>
           {group}

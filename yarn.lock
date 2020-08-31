@@ -3713,6 +3713,16 @@ mic-global@^1.1.16:
     react-dom "^16.13.1"
     react-jss "^10.1.1"
 
+mic-global@^1.1.17:
+  version "1.1.17"
+  resolved "https://registry.npmjs.org/mic-global/-/mic-global-1.1.17.tgz#a3ef546841facbcdf2ce435b88518b6b9e0ddc05"
+  integrity sha512-6yu8ZKyc9gp1A6HS+jK8jk8LVS7mOeYvQIAo22CkCospAJXwqVdJR9GmVWyvK7jJOjbOyL/sf+bPXoPjtgRjLQ==
+  dependencies:
+    jss "^10.3.0"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    react-jss "^10.1.1"
+
 mic-inspector@^1.2.18:
   version "1.2.18"
   resolved "https://registry.npmjs.org/mic-inspector/-/mic-inspector-1.2.18.tgz#9d293f177b3acbc028706fa635163eedfc310129"

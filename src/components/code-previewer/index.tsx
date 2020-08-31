@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useStyles } from './use-styles';
+import { useCodePreviwerStyles } from './use-styles';
 import { CodePreviewerProps } from './types';
 import { SyntaxHighlighter } from './locale';
 import { Tabs, Button, Tooltip } from 'antd';
@@ -22,7 +22,7 @@ export function CodePreviewer({ className, demo, language, children, ...props }:
   };
 
   return (
-    <BlockComponent className={useStyles(className)} {...props}>
+    <BlockComponent className={useCodePreviwerStyles(className)} {...props}>
       {
         demo ?
           (

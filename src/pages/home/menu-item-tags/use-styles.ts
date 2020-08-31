@@ -1,6 +1,6 @@
-import { createStyles, Level, REM, EM, Percent, White } from 'mic-global';
+import { createStyles, Level, REM, EM, White } from 'mic-global';
 
-export const useStyles = createStyles(
+export const useMenuItemTagsStyles = createStyles(
   'menu-item-tags',
   {
     display: 'inline-block',

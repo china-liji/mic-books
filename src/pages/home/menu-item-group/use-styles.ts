@@ -1,7 +1,7 @@
-import { createStyles, Level, REM, EM, Percent, White, Gray } from 'mic-global';
+import { createStyles, REM, Gray } from 'mic-global';
 import { Red } from '@/src/app/theme/color';
 
-export const useStyles = createStyles(
+export const useMenuItemGroupStyles = createStyles(
   'menu-item-group',
   {
     '& > .ant-menu-item-group-title': {

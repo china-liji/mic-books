@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './use-styles';
+import { useUsageDemoStyles } from './use-styles';
 import { DomInspector, Inspector, Properties, Property, PropertyName, PropertyValue, GetterValue, NumberValue, ObjectValue, StringValue, UnknownValue } from 'mic-inspector';
 
 export function UsageDemo() {
@@ -16,7 +16,7 @@ export function UsageDemo() {
   };
 
   return (
-    <div className={useStyles()}>
+    <div className={useUsageDemoStyles()}>
       <dl>
         <dt>Inspector</dt>
         <dd>

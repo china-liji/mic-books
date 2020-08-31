@@ -1,17 +1,77 @@
-import { createStyles, EM, Gray, REM, Pixel, White, Black, Percent } from 'mic-global';
+import { createStyles, EM, Gray, REM, White, Black, Percent } from 'mic-global';
 import { Language } from '@/src/language/types';
 import { Blue } from '@/src/app/theme/color';
+import { PreviewerMode } from './types';
 
-export const useStyles = createStyles(
+export const usePreviewerStyles = createStyles(
   'previewer',
   {
     fontSize: REM.S4,
     padding: 0,
     display: 'block',
+    position: 'relative',
+    // 这不用 :fullscreen，因为不能配合子元素选择器
+    [`&[data-mode='${PreviewerMode.Ppt}']`]: {
+      backgroundColor: `${White.L1} !important`,
+      fontSize: REM.S7,
+      lineHeight: EM.M5,
+      '&[data-current="0"]': {
+        '& > main': {
+          display: 'none',
+        },
+      },
+      '&:not([data-current="0"])': {
+        '& > header, & > .ant-layout-content > .loader > .suspense > *': {
+          display: 'none',
+        },
+        '& [data-current-page]': {
+          marginBottom: REM.M3,
+          fontSize: REM.L1,
+          lineHeight: EM.M5,
+          '&, & ~ *': {
+            display: 'block !important',
+          },
+        },
+        '& [data-current-page] ~ [data-page]': {
+          '&, & ~ *': {
+            display: 'none !important',
+          },
+        },
+      },
+      '& > header, & > main': {
+        position: 'absolute',
+        top: Percent.S6,
+        left: Percent.S6,
+        width: 'auto',
+        minWidth: Percent.G2,
+        maxWidth: Percent.M1,
+        minHeight: Percent.G2,
+        maxHeight: Percent.M1,
+        transform: `translate(-${Percent.S6}, -${Percent.S6})`,
+        overflow: 'visible',
+        padding: [0, REM.M3],
+        '&::before, &::after': {
+          content: '""',
+          display: 'block',
+          height: REM.M5,
+        },
+      },
+      '& > header': {
+        fontSize: REM.L5,
+      },
+    },
+    [`&:not([data-mode='${PreviewerMode.Ppt}'])`]: {
+      '& > footer': {
+        display: 'none',
+      },
+    },
     '& > header': {
       fontSize: EM.H1,
+      lineHeight: Percent.M4,
       color: Blue.L1,
-      margin: `${REM.M1} 0 ${REM.XS6} 0`,
+      whiteSpace: 'normal',
+      wordBreak: 'break-word',
+      margin: `0 0 ${REM.XS6} 0`,
     },
     '& > main': {
       padding: [0, REM.S2],
@@ -82,6 +142,10 @@ export const useStyles = createStyles(
     },
     '& p': {
       marginBottom: REM.XS5,
+    },
+    '& button': {
+      padding: REM.XS2,
+      margin: [0, REM.XS4, REM.XS4, 0],
     },
   }
 );

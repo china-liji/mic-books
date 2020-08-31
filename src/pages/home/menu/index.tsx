@@ -1,17 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Menu as AntdMenu, Layout } from 'antd';
 import { renderGroups } from './locale';
-import { useStyles } from './use-styles';
+import { useMenuStyles } from './use-styles';
 import { REM } from 'mic-global';
 import { pageContext } from '@/src/components/page/locale';
-import { context } from '../locale';
+import { homePageContext } from '../locale';
 import { Language } from '@/src/language/types';
 
 export function Menu(): React.ReactElement {
-  const className = useStyles();
   const { Sider } = Layout;
   const { language }  = useContext(pageContext);
-  const { setConfig } = useContext(context);
+  const { setConfig } = useContext(homePageContext);
   const [selectedKeys, setSelectedKeys] = useState([] as string[]);
   let runtimePath = selectedKeys[0];
 
@@ -32,7 +31,7 @@ export function Menu(): React.ReactElement {
   };
 
   return (
-    <Sider className={className} width={REM.XXXL1}>
+    <Sider className={useMenuStyles()} width={REM.XXXL1}>
       <AntdMenu mode='inline' selectedKeys={selectedKeys}>
         {renderGroups(language as Language, onItemSelected, onItemUnselected)}
       </AntdMenu>
