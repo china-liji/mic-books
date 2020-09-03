@@ -13,8 +13,8 @@ export const usePreviewerStyles = createStyles(
     // 这不用 :fullscreen，因为不能配合子元素选择器
     [`&[data-mode='${PreviewerMode.Ppt}']`]: {
       backgroundColor: `${White.L1} !important`,
-      fontSize: REM.S7,
-      lineHeight: EM.M5,
+      fontSize: REM.M1,
+      lineHeight: EM.M6,
       '&[data-current="0"]': {
         '& > main': {
           display: 'none',
@@ -59,6 +59,9 @@ export const usePreviewerStyles = createStyles(
       '& > header': {
         fontSize: REM.L5,
       },
+      '& .inline-demo, pre': {
+        fontSize: `${REM.S6} !important`,
+      },
     },
     [`&:not([data-mode='${PreviewerMode.Ppt}'])`]: {
       '& > footer': {
@@ -88,7 +91,7 @@ export const usePreviewerStyles = createStyles(
       '&::after': {
         content: '""',
         display: 'block',
-        marginTop: REM.S6,
+        marginTop: REM.L5,
       },
     },
     '& blockquote': {

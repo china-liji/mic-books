@@ -24,13 +24,14 @@
     "@ant-design/icons": "^4.1.0",
     "antd": "^4.2.5",
     "mic-global": "^1.1.17",
-    "mic-inspector": "^1.2.18",
+    "mic-inspector": "^1.2.21",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.3.0",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
-    "react-syntax-highlighter": "^13.0.0"
+    "react-syntax-highlighter": "^13.0.0",
+    "rexjs-api": "^1.7.2"
   },
   "devDependencies": {
     "@types/react": "^16.9.23",

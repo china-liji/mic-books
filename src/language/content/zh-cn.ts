@@ -7,6 +7,11 @@ export const language = {
     htmlNodes: {
     },
     preface: '序',
+    rexjs: {
+      mechanism: '解析机制',
+      syntaxCompiler: '语法编译器',
+      syntaxTree: '语法树',
+    },
     tag: {
       knowledge: '冷知识',
       mit: '开源',

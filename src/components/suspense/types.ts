@@ -4,5 +4,7 @@ import { BlockComponentProps } from 'mic-global';
 export interface SuspenseProps extends BlockComponentProps {
   children?: ReactSuspenseProps['children'];
 
-  fallback?: ReactSuspenseProps['fallback'];
+  onFail?: ReactSuspenseProps['fallback'];
+
+  onSuccess?(): void;
 }

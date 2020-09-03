@@ -8,6 +8,11 @@ export const language: Language = {
     htmlNodes: {
     },
     preface: 'Preface',
+    rexjs: {
+      mechanism: 'Mechanism of parser',
+      syntaxCompiler: 'Syntax compiler',
+      syntaxTree: 'Syntax tree',
+    },
     tag: {
       knowledge: 'Knowledge',
       mit: 'MIT',

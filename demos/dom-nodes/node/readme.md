@@ -38,7 +38,7 @@ import(watcherDemo);
 <!doctype html>
 <html class='root'>
   <!-- 注释内容 -->
-  <body id='my-id'>文本内容</body>
+  <body id='my-id'>我的文本内容</body>
 </html>
 ```
 
@@ -56,7 +56,7 @@ import(watcherDemo);
 * 注释节点 - `Comment`
   * `<!-- 注释内容 -->`
 * 文本节点 - `Text`
-  * `文本内容`
+  * `我的文本内容`
   * 换行及缩进等空白文本
 
 ### nodeType 节点类型
@@ -76,3 +76,7 @@ import(subsDemo);
 ```inline-demo
 import(descendantsDemo);
 ```
+
+### 更多内容
+* [CharacterData](#/dom-nodes/character-data)
+* [Element](#/dom-nodes/element)

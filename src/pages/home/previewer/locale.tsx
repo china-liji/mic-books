@@ -109,6 +109,10 @@ export const useLoader = (config: Config | null): [boolean, boolean, Loader] => 
   const [loader, setLoader] = useState(null as Loader);
   const [ready, setReady] = useState(false);
 
+  const onSuccess = (): void => {
+    setReady(true);
+  };
+
   useEffect((): void => {
     setReady(false);
 
@@ -126,10 +130,8 @@ export const useLoader = (config: Config | null): [boolean, boolean, Loader] => 
         .then((expo: Export): React.ReactElement => {
           document.querySelector(`.${originalClassName}`)!.scrollTop = 0;
 
-          setReady(true);
-
           return (
-            <Suspense>
+            <Suspense onSuccess={onSuccess}>
               <Markdown source={expo.default} renderers={getMarkdownRenderers(expo)} />
             </Suspense>
           );
@@ -165,19 +167,19 @@ export const useFullscreen = (isPptMode: boolean, setMode: PreviewerContext['set
   }, []);
 };
 
-export const usePage = (mode: PreviewerMode): [number, number, PreviewerContext['setPage']] => {
+export const usePage = (config: Config | null, mode: PreviewerMode, ready: boolean): [number, number, PreviewerContext['setPage']] => {
   const [page, setPage] = useState(0);
   const [maxPage, setMaxPage] = useState(0);
 
   useEffect((): void => {
     setPage(0);
-
+    
     setMaxPage(
-      mode === PreviewerMode.Ppt ?
+      mode === PreviewerMode.Ppt && ready ?
         getContainer().querySelectorAll(pageSelector).length - 1 :
         0
     );
-  }, [mode]);
+  }, [mode, config?.path, ready]);
 
   useEffect((): void => {
     getContainer().scrollTop = 0;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Tag } from 'antd';
 import { PrimaryTag } from './types';
 import { Language } from '@/src/language/types';
-import { Black } from 'mic-global';
+import { Blue } from '@/src/app/theme/color';
 
 const colors = ['magenta', 'volcano', 'blue', 'geekblue', 'purple', 'cyan', 'orange', 'red'];
 
@@ -14,7 +14,7 @@ export const getTagInfo = (tag: string, { menu: { tag: translation } }: Language
   {
     switch (tag) {
       case PrimaryTag.Knowledge:
-        color = Black.L5;
+        color = Blue.L1;
         tag = `👍 ${translation.knowledge}`;
         opacity = false;
         break block;

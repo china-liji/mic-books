@@ -16,7 +16,7 @@ export function Previwer(): ReactElement {
   const { config } = useContext(homePageContext);
   const [mode, setMode] = useState(PreviewerMode.Normal);
   const [ready, hasError, loader] = useLoader(config);
-  const [maxPage, page, setPage] = usePage(mode);
+  const [maxPage, page, setPage] = usePage(config, mode, ready);
 
   usePpt(page, mode, setMode);
 

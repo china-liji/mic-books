@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { homePageContext } from '../locale';
 import { useMenuItemStyles } from './use-styles';
 import { MenuItemTags } from '../menu-item-tags';
+import { scrollIntoViewIfNeed } from './locale';
 
 export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onItemUnselected, ...props }: MenuItemProps): React.ReactElement {
   let { path } = config;
@@ -28,10 +29,11 @@ export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onIte
 
     onItemSelected(path);
     setConfig(config);
+    scrollIntoViewIfNeed(path);
   }, [key, path]);
 
   return (
-    <Item className={useMenuItemStyles()} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
+    <Item className={useMenuItemStyles()} data-path={path} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
       <Link to={`/${path}`}>
         <q>{matchedHtmlTag ? matchedHtmlTag[1] : title}</q>
         <MenuItemTags tags={tags} />

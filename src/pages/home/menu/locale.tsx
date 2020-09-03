@@ -53,6 +53,50 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
 
 export const getConfigs = ({ menu, text }: Language): Config[] => {
   return [
+    new Config(
+      menu.preface,
+      'readme',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom-nodes/readme.md') as unknown as Export;
+      },
+      'DOM Nodes'
+    ),
+    new Config(
+      'Node',
+      'node',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom-nodes/node') as unknown as Export;
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
+    ),
+    new Config(
+      'CharacterData',
+      'character-data',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom-nodes/character-data') as unknown as Export;
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
+    ),
+    new Config(
+      'Element',
+      'element',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom-nodes/element') as unknown as Export;
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
+    ),
+    new Config(
+      'HTMLElement',
+      'html-element',
+      async (): Promise<Export> => {
+        return await import('@/demos/dom-nodes/html-element') as unknown as Export;
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
+    ),
     ...(
       location.hostname === 'localhost' ?
         [
@@ -92,50 +136,6 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
             'TypeScript',
             [PrimaryTag.Vs]
           ),
-          new Config(
-            menu.preface,
-            'readme',
-            async (): Promise<Export> => {
-              return await import('@/demos/dom-nodes/readme.md') as unknown as Export;
-            },
-            'DOM Nodes'
-          ),
-          new Config(
-            'Node',
-            'node',
-            async (): Promise<Export> => {
-              return await import('@/demos/dom-nodes/node') as unknown as Export;
-            },
-            void 0,
-            [PrimaryTag.Knowledge]
-          ),
-          new Config(
-            'CharacterData',
-            'character-data',
-            async (): Promise<Export> => {
-              return await import('@/demos/dom-nodes/character-data') as unknown as Export;
-            },
-            void 0,
-            [PrimaryTag.Knowledge]
-          ),
-          new Config(
-            'Element',
-            'element',
-            async (): Promise<Export> => {
-              return await import('@/demos/dom-nodes/element') as unknown as Export;
-            },
-            void 0,
-            [PrimaryTag.Knowledge]
-          ),
-          new Config(
-            'HTMLElement',
-            'html-element',
-            async (): Promise<Export> => {
-              return await import('@/demos/dom-nodes/html-element') as unknown as Export;
-            },
-            void 0,
-            [PrimaryTag.Knowledge]
-          ),
         ]: []
     ),
     new Config(
@@ -171,62 +171,102 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
       'properties',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/properties') as unknown as Export;
-      }
+      },
+      void 0,
+      ['object']
     ),
     new Config(
       '<Property />',
       'property',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/property') as unknown as Export;
-      }
+      },
+      void 0,
+      ['object']
     ),
     new Config(
       '<PropertyName />',
       'property-name',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/property-name') as unknown as Export;
-      }
+      },
+      void 0,
+      ['object']
     ),
     new Config(
       '<PropertyValue />',
       'property-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/property-value') as unknown as Export;
-      }
+      },
+      void 0,
+      ['object']
     ),
     new Config(
       '<GetterValue />',
       'getter-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/getter-value') as unknown as Export;
-      }
+      },
+      void 0,
+      ['function']
     ),
     new Config(
       '<NumberValue />',
       'number-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/number-value') as unknown as Export;
-      }
+      },
+      void 0,
+      ['number']
     ),
     new Config(
       '<ObjectValue />',
       'object-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/object-value') as unknown as Export;
-      }
+      },
+      void 0,
+      ['object']
     ),
     new Config(
       '<StringValue />',
       'string-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/string-value') as unknown as Export;
-      }
+      },
+      void 0,
+      ['string']
     ),
     new Config(
       '<UnknownValue />',
       'unknown-value',
       async (): Promise<Export> => {
         return await import('@/demos/mic/mic-inspector/unknown-value') as unknown as Export;
+      }
+    ),
+    new Config(
+      text.introduction,
+      'readme',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/readme.md') as unknown as Export;
+      },
+      'Rexjs',
+      [],
+      [menu.rexjs.syntaxCompiler, PrimaryTag.Mit, PrimaryTag.Npm, PrimaryTag.Git]
+    ),
+    new Config(
+      menu.rexjs.mechanism,
+      'mechanism',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/mechanism') as unknown as Export;
+      }
+    ),
+    new Config(
+      menu.rexjs.syntaxTree,
+      'syntax-tree',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/syntax-tree') as unknown as Export;
       }
     ),
   ];

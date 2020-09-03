@@ -1,15 +1,23 @@
-import React, { Suspense as ReactSuspense } from 'react';
+import React, { Suspense as ReactSuspense, useState } from 'react';
 import { Spin } from 'antd';
 import { useSuspenseStyles } from './use-styles';
 import { SuspenseProps } from './types';
 import { BlockComponent } from 'mic-global';
+import { Content } from './content';
 
-export function Suspense({ className, children, fallback = null, ...props }: SuspenseProps): React.ReactElement {
+export function Suspense({ className, children, onFail = null, onSuccess, ...props }: SuspenseProps): React.ReactElement {
+  const [inited, setInited] = useState(false);
+
+  const onInit = (): void => {
+    setInited(true);
+    onSuccess && onSuccess();
+  };
+
   return (
     <BlockComponent className={useSuspenseStyles(className)} {...props}>
-      <Spin />
-      <ReactSuspense fallback={fallback}>
-        {children}
+      {inited ? null : <Spin />}
+      <ReactSuspense fallback={onFail}>
+        <Content onInit={onInit}>{children}</Content>
       </ReactSuspense>
     </BlockComponent>
   );
