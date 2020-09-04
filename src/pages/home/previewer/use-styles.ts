@@ -59,7 +59,7 @@ export const usePreviewerStyles = createStyles(
       '& > header': {
         fontSize: REM.L5,
       },
-      '& .inline-demo, pre': {
+      '& .inline-demo, pre, .mic-dom-inspector li': {
         fontSize: `${REM.S6} !important`,
       },
     },

@@ -22,7 +22,7 @@ export function HtmlApiDemo() {
     );
 
     setNamespaceURI(null);
-    setTitle('在 HTML 文档中，对非 HTMLElement 的 <div> 设置 innerHTML，解析出的子元素中可能会包含 HTMLElement。');
+    setTitle('在 HTML 文档中，对非 HTMLElement 的 <div> 设置 innerHTML，依据特殊 HTML 标签名，解析出的子元素中可能会包含 HTMLElement。');
   };
 
   const onXmlDocAndHtmlElement = () => {

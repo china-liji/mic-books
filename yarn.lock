@@ -5372,13 +5372,6 @@ retry@^0.12.0:
   resolved "https://registry.npmjs.org/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
   integrity sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=
 
-rexjs-api@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.npmjs.org/rexjs-api/-/rexjs-api-1.7.2.tgz#fcdc4342c21e03373ace6bb0a69ae90387908b3b"
-  integrity sha512-/0xiWAgg3wMz5dizaYAXJiUI5XD3Hkpx/BOomjfTNmWWZNzgZC6vvKcyFfbZvITScRE6LiPXAgBMoUWE9PoOPA==
-  dependencies:
-    uglify-js "^3.3.12"
-
 rimraf@2.6.3:
   version "2.6.3"
   resolved "https://registry.npmjs.org/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
@@ -6257,11 +6250,6 @@ uglify-js@3.4.x:
   dependencies:
     commander "~2.19.0"
     source-map "~0.6.1"
-
-uglify-js@^3.3.12:
-  version "3.10.3"
-  resolved "https://registry.npmjs.org/uglify-js/-/uglify-js-3.10.3.tgz#f0d2f99736c14de46d2d24649ba328be3e71c3bf"
-  integrity sha512-Lh00i69Uf6G74mvYpHCI9KVVXLcHW/xu79YTvH7Mkc9zyKUeSPz0owW0dguj0Scavns3ZOh3wY63J0Zb97Za2g==
 
 unherit@^1.0.4:
   version "1.1.3"

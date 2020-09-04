@@ -54,7 +54,7 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
 export const getConfigs = ({ menu, text }: Language): Config[] => {
   return [
     new Config(
-      menu.preface,
+      'DOM Nodes',//menu.preface,
       'readme',
       async (): Promise<Export> => {
         return await import('@/demos/dom-nodes/readme.md') as unknown as Export;
@@ -260,13 +260,45 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
       'mechanism',
       async (): Promise<Export> => {
         return await import('@/demos/rexjs/mechanism') as unknown as Export;
-      }
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
     ),
     new Config(
       menu.rexjs.syntaxTree,
       'syntax-tree',
       async (): Promise<Export> => {
         return await import('@/demos/rexjs/syntax-tree') as unknown as Export;
+      },
+      void 0,
+      [PrimaryTag.Knowledge]
+    ),
+    new Config(
+      'Statements',
+      'statements',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/statements') as unknown as Export;
+      }
+    ),
+    new Config(
+      'Statement',
+      'statement',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/statement') as unknown as Export;
+      }
+    ),
+    new Config(
+      'Expression',
+      'expression',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/expression') as unknown as Export;
+      }
+    ),
+    new Config(
+      'SyntaxTag',
+      'syntax-tag',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/syntax-tag') as unknown as Export;
       }
     ),
   ];

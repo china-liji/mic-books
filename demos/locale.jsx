@@ -1,12 +1,12 @@
 import React from 'react';
 import { Inspector } from 'mic-inspector';
 
-export const fitler = (constructor, indirect = false, callback) => {
+export const fitlerTypes = (constructor, indirect = false, owner = window, callback) => {
   const list = [];
 
-  // 遍历 window 属性名
-  for (const name of Object.getOwnPropertyNames(window).sort()) {
-    const fn = window[name];
+  // 遍历 owner 属性名
+  for (const name of Object.getOwnPropertyNames(owner).sort()) {
+    const fn = owner[name];
     const { prototype } = fn || {};
 
     switch (true) {
@@ -31,10 +31,10 @@ export const fitler = (constructor, indirect = false, callback) => {
   return list;
 };
 
-export const renderTypes = (constructor, indirect = false) => {
+export const renderTypes = (constructor, indirect = false, owner) => {
   const elements = [];
 
-  fitler(constructor, indirect, (name, prototype) => {
+  fitlerTypes(constructor, indirect, owner, (name, prototype) => {
     elements.push(
       <Inspector key={name} name={name} value={prototype} />
     );

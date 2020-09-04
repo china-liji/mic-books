@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Inspector } from 'mic-inspector';
-import Rexjs from 'rexjs-api';
+import Rexjs from '../../rexjs-api';
 
 export function ResultDemo() {
   const parser = useMemo(() => {

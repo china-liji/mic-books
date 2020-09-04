@@ -30,8 +30,7 @@
     "react-jss": "^10.3.0",
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.1.2",
-    "react-syntax-highlighter": "^13.0.0",
-    "rexjs-api": "^1.7.2"
+    "react-syntax-highlighter": "^13.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.9.23",

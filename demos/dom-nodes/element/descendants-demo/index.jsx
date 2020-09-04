@@ -1,11 +1,11 @@
 import React from 'react';
-import { fitler } from '../../locale';
+import { fitlerTypes } from '../../../locale';
 import { Inspector } from 'mic-inspector';
 
 export function DescendantsDemo() {
   return (
     <div>
-      <Inspector name='list' value={fitler(Element, true)} />
+      <Inspector name='list' value={fitlerTypes(Element, true)} />
     </div>
   );
 }
