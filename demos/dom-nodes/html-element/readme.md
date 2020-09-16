@@ -1,7 +1,8 @@
 ### 描述
 `HTMLElement` - `HTML` 元素节点，它是 `HTML` 文档的重要组成部分。`HTML` 元素节点为显示而生，主要属性、能力都是关于着**交互**这一方面。
+>
 
-如果把 `HTMLElement` 比喻成一个独立的国度，那么 `Element` 负责的就是**内政**大权（自身属性），而 `HTMLElement` 负责的则是**外交**政策（交互属性）。
+如果把 `Element` 与 `HTMLElement` 皆比喻成一个独立的国度，那么 `Element` 代表着一个闭关锁国，只有**内政**大权（自身属性）的国度；而 `HTMLElement` 则代表是一个“改革开放”，既有**内政**大权（自身属性），又有**外交**政策（交互属性）的国度。
 
 ### Extends
 [Element](#/dom-nodes/element)

@@ -274,6 +274,13 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
       [PrimaryTag.Knowledge]
     ),
     new Config(
+      'SyntaxParser',
+      'syntax-parser',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/syntax-parser') as unknown as Export;
+      }
+    ),
+    new Config(
       'Statements',
       'statements',
       async (): Promise<Export> => {
@@ -299,6 +306,41 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
       'syntax-tag',
       async (): Promise<Export> => {
         return await import('@/demos/rexjs/syntax-tag') as unknown as Export;
+      }
+    ),
+    new Config(
+      'SyntaxTags',
+      'syntax-tags',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/syntax-tags') as unknown as Export;
+      }
+    ),
+    new Config(
+      'TagClass',
+      'tag-class',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/tag-class') as unknown as Export;
+      }
+    ),
+    new Config(
+      'TagType',
+      'tag-type',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/tag-type') as unknown as Export;
+      }
+    ),
+    new Config(
+      'ContentBuilder',
+      'content-builder',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/content-builder') as unknown as Export;
+      }
+    ),
+    new Config(
+      'MappingBuilder',
+      'mapping-builder',
+      async (): Promise<Export> => {
+        return await import('@/demos/rexjs/mapping-builder') as unknown as Export;
       }
     ),
   ];

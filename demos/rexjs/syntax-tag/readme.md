@@ -35,3 +35,4 @@ import(typesDemo);
 * [Statements](#/rexjs/statements)
 * [Statement](#/rexjs/statement)
 * [Expression](#/rexjs/expression)
+* [SyntaxTags](#/rexjs/syntax-tags)
