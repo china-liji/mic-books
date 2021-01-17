@@ -10,7 +10,7 @@ export function InlineFuncDemo() {
     getTimes = () => {
       return times;
     },
-    // 这里没有依赖，所以 callback 不会刷新
+    // 这里没有依赖，所以 getTimesWithUseCallback 不会变化
     []
   );
 

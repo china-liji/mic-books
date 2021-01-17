@@ -21,17 +21,18 @@ export function DepsDemo() {
   return (
     <div>
       <p>
-        useCallback(..., <span>[{changeableDeps ? 'times' : 'null'}]</span>);
+        getTimes = useCallback(..., [<span>{changeableDeps ? times : 'null'}</span>]);
       </p>
-      <hr />
       <p>
-        每秒执行结果: <span>{getTimes()}</span>
+        getTimes():{' '}
+        <span>{getTimes()}</span>
         <sub>{
           changeableDeps ?
             '每次结果都不同，说明 useCallback 在随着 deps 的变化而更新' :
             'deps 固定为 [null]，useCallback 不会更新，结果不再变化'
         }</sub>
       </p>
+      <hr />
       <p>
         <Button onClick={onButtonClick}>
           {changeableDeps ? '移除' : '设置'}动态 deps

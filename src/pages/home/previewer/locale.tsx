@@ -157,7 +157,7 @@ export const useFullscreen = (isPptMode: boolean, setMode: PreviewerContext['set
     getContainer().addEventListener(
       'fullscreenchange',
       (): void => {
-        if (document.fullscreen) {
+        if (document.fullscreenElement) {
           return;
         }
 

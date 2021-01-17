@@ -51,8 +51,64 @@ export const renderGroups = (language: Language, onItemSelected: MenuItemProps['
   return groups;
 };
 
+export const getConfigSiblings = ({ group, path }: Config, language: Language): Config[] => {
+  return getConfigs(language).filter(({ group: g, path: p }): boolean => {
+    return group === g && path !== p;
+  });
+};
+
 export const getConfigs = ({ menu, text }: Language): Config[] => {
   return [
+    ...(
+      location.hostname === 'localhost' ?
+        [
+          new Config(
+            'useState',
+            'use-state',
+            async (): Promise<Export> => {
+              return await import('@/demos/react/hooks/use-state') as unknown as Export;
+            },
+            'React',
+            ['hooks']
+          ),
+          new Config(
+            'useRef',
+            'use-ref',
+            async (): Promise<Export> => {
+              return await import('@/demos/react/hooks/use-ref') as unknown as Export;
+            },
+            void 0,
+            ['hooks']
+          ),
+          new Config(
+            'useMemo',
+            'use-memo',
+            async (): Promise<Export> => {
+              return await import('@/demos/react/hooks/use-memo') as unknown as Export;
+            },
+            void 0,
+            ['hooks']
+          ),
+          new Config(
+            'useCallback',
+            'use-callback',
+            async (): Promise<Export> => {
+              return await import('@/demos/react/hooks/use-callback') as unknown as Export;
+            },
+            void 0,
+            ['hooks']
+          ),
+          new Config(
+            menu.typescript.interfaceAndType,
+            'interface-vs-type',
+            async (): Promise<Export> => {
+              return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
+            },
+            'TypeScript',
+            [PrimaryTag.Vs]
+          ),
+        ]: []
+    ),
     new Config(
       'DOM Nodes',//menu.preface,
       'readme',
@@ -96,47 +152,6 @@ export const getConfigs = ({ menu, text }: Language): Config[] => {
       },
       void 0,
       [PrimaryTag.Knowledge]
-    ),
-    ...(
-      location.hostname === 'localhost' ?
-        [
-          new Config(
-            'useState',
-            'use-state',
-            async (): Promise<Export> => {
-              return await import('@/demos/react/hooks/use-state') as unknown as Export;
-            },
-            'React',
-            ['hooks']
-          ),
-          new Config(
-            'useRef',
-            'use-ref',
-            async (): Promise<Export> => {
-              return await import('@/demos/react/hooks/use-ref') as unknown as Export;
-            },
-            void 0,
-            ['hooks']
-          ),
-          new Config(
-            'useCallback',
-            'use-callback',
-            async (): Promise<Export> => {
-              return await import('@/demos/react/hooks/use-callback') as unknown as Export;
-            },
-            void 0,
-            ['hooks']
-          ),
-          new Config(
-            menu.typescript.interfaceAndType,
-            'interface-vs-type',
-            async (): Promise<Export> => {
-              return await import('@/demos/typescript/interface-vs-type.md') as unknown as Export;
-            },
-            'TypeScript',
-            [PrimaryTag.Vs]
-          ),
-        ]: []
     ),
     new Config(
       text.introduction,

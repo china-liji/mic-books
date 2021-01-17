@@ -24,8 +24,39 @@ const buttonRef = useRef();
 <button ref={buttonRef} />;
 ```
 
-### 示例
-该 `useRef` 实例是我们文档中较多引用到的自编 `hooks` 之一 - `useHasChanged`，用于判断某个值是否有变化。
+### 有效场景
+* 当需要记录一个 `值`，但不需要触发组件的更新时，可以使用 `useRef`。
+```jsx
+export function Demo() {
+  const inputValueRef = useRef('');
+
+  const onInputChange = ({ target }) => {
+    inputValueRef.current = target.value;
+  };
+
+  const sendToServer = () => {
+    const http = new XMLHttpRequest();
+
+    http.open('get', `url?text=${inputValueRef.current}`, true);
+    http.send();
+  };
+
+  return (
+    <div>
+      <input onChange={onInputChange} />
+      <button onClick={sendToServer}>发送</button>
+    </div>
+  );
+}
+```
+
+* 将 `useRef` 使用在 `html` 元素的 `ref` 属性上，可以用于记录一个元素。
 ```demo
-import(useHasChangedDemo);
+import(elementRefDemo);
+```
+
+### 无效场景
+`useRef` 无法是触发组件更新的，当需要触发组件的更新时，请使用 `useState`。
+```demo
+import(refVsStateDemo);
 ```

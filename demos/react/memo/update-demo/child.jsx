@@ -1,19 +1,17 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import useUpdateTimes from '@/demos/hooks/use-update-times';
 
-export function ChildDemo({ title, getContent, date }) {
-  const updateTimes = useRef(0);
-  
-  updateTimes.current++;
+export function ChildDemo({ method }) {
+  const times = useUpdateTimes();
 
   return (
     <div>
-      {title}
-      <br />
-      子组件更新次数: <span>{updateTimes.current}</span>
-      <hr data-mini />
-      date: {date.toLocaleTimeString()}
-      <br />
-      getContent(): <span>{getContent()}</span><sub>刷新标识</sub>
+      <p>
+        子组件更新次数: <span>{times}</span>
+      </p>
+      <p>
+        method(): <span>{method()}</span>
+      </p>
     </div>
   );
 }

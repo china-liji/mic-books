@@ -4,8 +4,10 @@ import depsDemoSource from './deps-demo?txt';
 import inlineFuncDemoSource from './inline-func-demo?txt';
 import outerFuncDemoSource from './outer-func-demo?txt';
 import outerFuncDemoLocaleSource from './outer-func-demo/locale?txt';
-import depBySubDemoSource from './dep-by-sub-demo?txt';
-import depBySubDemoSubSource from './dep-by-sub-demo/sub?txt';
+import depByChildDemoSource from './dep-by-child-demo?txt';
+import depByChildDemoSubSource from './dep-by-child-demo/child?txt';
+import undepsDemoSource from './undeps-demo?txt';
+import undepsDemoPopupSource from './undeps-demo/popup?txt';
 import markdown from './readme.md';
 import { DepsDemo } from './deps-demo';
 import { Demo } from '@/src/components/code-previewer/demo';
@@ -45,10 +47,15 @@ export const outerFuncDemo = new Demo([
   new File('locale.js', outerFuncDemoLocaleSource),
 ]);
 
-export const depBySubDemo = new Demo([
-  new File('index.jsx', depBySubDemoSource),
-  new File('sub.jsx', depBySubDemoSubSource),
+export const depByChildDemo = new Demo([
+  new File('index.jsx', depByChildDemoSource),
+  new File('child.jsx', depByChildDemoSubSource),
   fileOfUseUpdateTimes,
+]);
+
+export const undepsDemo = new Demo([
+  new File('index.jsx', undepsDemoSource),
+  new File('popup.jsx', undepsDemoPopupSource),
 ]);
 
 export default markdown;

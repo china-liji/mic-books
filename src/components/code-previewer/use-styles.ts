@@ -72,6 +72,12 @@ export const useCodePreviwerStyles = createStyles(
               content: '"-"',
               margin: [0, EM.M1],
             },
+            '&[data-sep]::before': {
+              content: 'attr(data-sep)',
+            },
+            '&[data-sep="="]::before': {
+              margin: [0, EM.S5],
+            },
           },
           '& p:last-child': {
             marginBottom: 0,

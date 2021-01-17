@@ -27,4 +27,8 @@ export class Config {
     this.groupTags = Config.currentGruopTags = currentGruopTags;
     this.tags = [group, ...tags];
   }
+
+  get pathname(): string {
+    return this.path.split(' ').join('-').toLocaleLowerCase();
+  }
 }

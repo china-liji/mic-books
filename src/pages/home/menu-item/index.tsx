@@ -8,33 +8,31 @@ import { MenuItemTags } from '../menu-item-tags';
 import { scrollIntoViewIfNeed } from './locale';
 
 export function MenuItem({ config, eventKey, selectedKeys, onItemSelected, onItemUnselected, ...props }: MenuItemProps): React.ReactElement {
-  let { path } = config;
-  const { title, tags } = config;
+  const { title, tags, pathname } = config;
   const key = (useParams()[0] as string || '').toLocaleLowerCase();
   const { Item } = Menu;
   const { setConfig } = useContext(homePageContext);
   const matchedHtmlTag = /^\s*<\s*([\w.$_]+)\s*\/>\s*$/.exec(title);
 
-  path = path.split(' ').join('-').toLocaleLowerCase();
-  eventKey = path;
+  eventKey = pathname;
 
   useEffect((): void => {
-    if (key !== path) {
-      if (selectedKeys && selectedKeys[0] === path) {
-        onItemUnselected(path);
+    if (key !== pathname) {
+      if (selectedKeys && selectedKeys[0] === pathname) {
+        onItemUnselected(pathname);
       }
 
       return;
     }
 
-    onItemSelected(path);
+    onItemSelected(pathname);
     setConfig(config);
-    scrollIntoViewIfNeed(path);
-  }, [key, path]);
+    scrollIntoViewIfNeed(pathname);
+  }, [key, pathname]);
 
   return (
-    <Item className={useMenuItemStyles()} data-path={path} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
-      <Link to={`/${path}`}>
+    <Item className={useMenuItemStyles()} data-path={pathname} eventKey={eventKey} data-html-tag={!!matchedHtmlTag} {...props}>
+      <Link to={`/${pathname}`}>
         <q>{matchedHtmlTag ? matchedHtmlTag[1] : title}</q>
         <MenuItemTags tags={tags} />
       </Link>
